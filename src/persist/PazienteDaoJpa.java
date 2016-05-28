@@ -3,7 +3,9 @@ package persist;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 import model.Paziente;
 
@@ -11,10 +13,12 @@ public class PazienteDaoJpa implements PazienteDao {
 
 	@Override
 	public void save(EntityManager em, Paziente paziente) {
+
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		em.persist(paziente);
 		tx.commit();
+
 	}
 
 	@Override

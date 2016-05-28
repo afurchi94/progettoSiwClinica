@@ -1,5 +1,7 @@
 package model;
 
-public class Clinica {
+import java.util.*;
 
+public class Clinica {
+	private Map<String, Amministratore> amministratori;
 }
