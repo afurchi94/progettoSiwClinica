@@ -10,12 +10,15 @@
 <div>
 
 <h1> I Risultati dell`esame che hai inserito sono:</h1>
-Da implementare la stampa risultati
+
 			<p>
 			<ul >
-				<li>Risultati0: ${esame.risultati}</li>
-				<li>Risultati1 </li>
-				<li>Risultati2... </li>
+				<li>${esame.risultati}</li>
+				<% for( int i=0; i<=esame.risultati.size(); i++){ %>
+				
+				<li>${esame.risultati[i]}</li>			
+				
+			<% 	} %>
 			</ul>
 			</p>
 			<div align="center">

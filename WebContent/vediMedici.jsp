@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="model.Clinica"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,12 +27,11 @@
 <h1>Elenco Medici della Clinica</h1>
 
 <!-- Probabilmente questo lo sostituisco con una Tabella -->
-(dati messi a caso ancora, probabilmente dopo li metto in una Tabella)
-<ul>
-<li>Codice:01  Nome:Mario  Cognome:Rossi  Specializzazione:boh01</li>
-<li>Codice:02  Nome: aa Cognome:ab  Specializzazione:boh02</li>
-<li>Codice:03  Nome: bb Cognome:ba  Specializzazione:boh03</li>
 
+<ul >
+	<% for( int i=0; i<=medici.size(); i++){ %>	
+		<li>${medici[i].codice} - ${medici[i].cognome} - ${medici[i].nome} - ${medici[i].specializzazione} - </li>			
+	<% 	} %>
 </ul>
 
 </div>

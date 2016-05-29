@@ -11,12 +11,13 @@
 
 <h1>Esami del medico: ${medicoCorrente.cognome} ${medicoCorrente.nome}</h1>
 
-(da finire di implementare)
+(da finire di implementare il link su ogni esame)
 <ul>
-<li>Esame 1........</li>
-<li>Esame2........</li>
-<li>Esame3........</li>
+	<% for( int i=0; i<=medicoCorrente.esami.size(); i++){ %>	
+		<li> Esame ${medicoCorrente.esami[i].codice} del ${medicoCorrente.esami[i].dataEffettuazione}</li>			
+	<% 	} %>
 </ul>
+
 
 <a href="/ProgettoSiwClinica/vediMedici">	<button type="button">Cerca altro Medico</button></a>
 <a href="/ProgettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>

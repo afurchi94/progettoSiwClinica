@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="model.Clinica"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,8 +15,10 @@
 <!-- il Type Radio serve a mettere una spunta sulla nostra scelta della tipologia. Questa parte è meglio vista quando è finita con JS in cui aggiorniamo le nuove tipologie -->
 					<div class="form-group">
 						<p>${tipologiaError}</p>
-						<label>Tipologia Esame</label> <input type="radio" class="form-control"  name="tipologiaEsame1"
-								value='${param["tipologiaEsame"]}'> Tipologia Esame 1 <br>
+						<label>Tipologia Esame</label>
+						<% for( int i=0; i<=tipologie.size(); i++){ %>
+						<input type="radio" class="form-control"  name="tipologiaEsame"  value=tipologie[i] }> ${tipologie[i].nome}<br>
+						<% 	} %>
 					</div>
 					
 	<!-- L-inserimento della data ora è un po barbaro, ma dovrebbe funzionare... Se non funziona dobbiamo per forza usare quello del prof-->				
