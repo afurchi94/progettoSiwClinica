@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -19,6 +19,9 @@ public class Esame {
 	@OneToOne
 	@JoinColumn(name="paziente_fk")
 	private Paziente paziente;
+	@OneToMany
+	@Column(name = "esame_fk")
+	private List<Risultato> risultati;
 
 	public Long getId() {
 		return id;
@@ -66,6 +69,14 @@ public class Esame {
 
 	public void setPaziente(Paziente paziente) {
 		this.paziente = paziente;
+	}
+
+	public List<Risultato> getRisultati() {
+		return risultati;
+	}
+
+	public void setRisultati(List<Risultato> risultati) {
+		this.risultati = risultati;
 	}
 
 	@Override
