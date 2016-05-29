@@ -11,9 +11,9 @@
 <center> <h1>Area Paziente</h1></center>
 <br>
 <center> <h2>Scegli l'operazione vuoi effettuare:</h2></center>
-			<div >	<a href="/consultaEsami"><h1>Consulta gli Esami Sostenuti</h1></a>	</div>
+			<div >	<a href="/ProgettoSiwClinica/consultaEsami"><h1>Consulta gli Esami Sostenuti</h1></a>	</div>
 
 
 </body>
->>>>>>> refs/remotes/origin/master
+
 </html>

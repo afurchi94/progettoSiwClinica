@@ -19,7 +19,7 @@
 
 
 <br><br>
-<a href="/homePage"><button type="button">Torna alla Home Page</button></a>
+<a href="/ProgettoSiwClinica/homePage"><button type="button">Torna alla Home Page</button></a>
 </body>
->>>>>>> refs/remotes/origin/master
+
 </html>

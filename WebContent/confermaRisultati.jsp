@@ -20,12 +20,12 @@ Da implementare la stampa risultati
 			</p>
 			<div align="center">
 			<h1>Confermi l`inserimento dei Risultati dell`Esame?</h1>
-			<a href="/areaAmministrazione">	<button type="button"  onclick="alert('Risultati Esame inseriti con Successo')">Conferma Inserimento Risultati</button></a>
-			<a href="/inserisciRisultati">	<button type="button">Torna Indietro</button></a>
+			<a href="/ProgettoSiwClinica/areaAmministrazione">	<button type="button"  onclick="alert('Risultati Esame inseriti con Successo')">Conferma Inserimento Risultati</button></a>
+			<a href="/ProgettoSiwClinica/inserisciRisultati">	<button type="button">Torna Indietro</button></a>
 		</div>
 		</div>
 
 
 </body>
->>>>>>> refs/remotes/origin/master
+
 </html>

@@ -20,11 +20,11 @@
 			</p>
 			<div align="center">
 			<h1>Sei Sicuro di aver inserito correttamente i dati e desideri procedere con la creazione dell`Esame?</h1>
-			<a href="/areaAmministrazione">	<button type="button"  onclick="alert('Esame Creato con Successo')">Conferma Creazione Esame</button></a>
-			<a href="/newEsame">	<button type="button">Torna Indietro</button></a>
+			<a href="/ProgettoSiwClinica/areaAmministrazione">	<button type="button"  onclick="alert('Esame Creato con Successo')">Conferma Creazione Esame</button></a>
+			<a href="/ProgettoSiwClinica/newEsame">	<button type="button">Torna Indietro</button></a>
 		</div>
 		</div>
 
 </body>
->>>>>>> refs/remotes/origin/master
+
 </html>

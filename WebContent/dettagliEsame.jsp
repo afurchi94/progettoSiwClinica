@@ -21,8 +21,8 @@
 				Risultati: 
 				
 				
-				<a href="/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
-				<a href="/homePage">	<button type="button">Torna alla HomePage</button></a>
+				<a href="/ProgettoSiwClinica/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
+				<a href="/ProgettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
 </body>
->>>>>>> refs/remotes/origin/master
+
 </html>

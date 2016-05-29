@@ -18,8 +18,8 @@
 <li>Esame3........</li>
 </ul>
 
-<a href="/vediMedici">	<button type="button">Cerca altro Medico</button></a>
-<a href="/homePage">	<button type="button">Torna alla HomePage</button></a>
+<a href="/ProgettoSiwClinica/vediMedici">	<button type="button">Cerca altro Medico</button></a>
+<a href="/ProgettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
 </body>
->>>>>>> refs/remotes/origin/master
+
 </html>
