@@ -47,7 +47,7 @@
 				out.print(request.getParameter("dataNascita"));%>" />
 
 		</p>
-		<input type="submit" name="submit" value="invia" />
+		<input type="submit" name="submit" value="Registra Paziente" />
 		</p>
 	</form>
 </body>

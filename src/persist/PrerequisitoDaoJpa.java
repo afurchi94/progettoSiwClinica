@@ -1,9 +1,15 @@
 package persist;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
+import controllerTipologiaEsame.ControllerTipologiaEsame;
+import model.Facade;
 import model.Prerequisito;
+import model.Risultato;
+import model.TipologiaEsame;
 
 public class PrerequisitoDaoJpa implements PrerequisitoDao {
 
@@ -25,8 +31,8 @@ public class PrerequisitoDaoJpa implements PrerequisitoDao {
 	}
 
 	@Override
-	public Prerequisito find(EntityManager em, Prerequisito prerequisito) {
-		return em.find(prerequisito.getClass(), prerequisito.getId());
+	public Prerequisito find(EntityManager em, Long id) {
+		return em.find(Prerequisito.class, id);
 	}
 
 	@Override

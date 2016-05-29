@@ -12,13 +12,28 @@
 <li>Nome: ${tipologiaCorrente.nome}</li>
 <li>Descrizione: ${tipologiaCorrente.descrizione}</li>
 <li>Costo: ${tipologiaCorrente.costo} Euro</li>
-<li>Pre-Requisiti: ${tipologiaCorrente.preRequisiti}</li>
-<li>Risultati Esame: ${tipologiaCorrente.risultati}</li>
+<li>Pre-Requisiti:
+
+<ul >
+	<% for( int i=0; i<=tipologiaCorrente.prerequisiti.size(); i++){ %>	
+		<li>${tipologiaCorrente.prerequisiti[i]}</li>			
+	<% 	} %>
+</ul>
+</li>
+<li>Risultati Esame: 
+
+<ul >
+	<% for( int i=0; i<=tipologiaCorrente.risultati.size(); i++){ %>	
+		<li>${tipologiaCorrente.risultati[i]}</li>			
+	<% 	} %>
+</ul>
+</li>
 
 </ul>
 
 
 <br><br>
-<a href="/homePage"><button type="button">Torna alla Home Page</button></a>
+<a href="/ProgettoSiwClinica/homePage"><button type="button">Torna alla Home Page</button></a>
 </body>
+
 </html>

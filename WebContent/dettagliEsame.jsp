@@ -19,9 +19,17 @@
 				<li>Medico: ${medico.cognome} ${medico.nome}</li>
 			</ul>
 				Risultati: 
+				<ul >
+				<li>${esame.risultati}</li>
+				<% for( int i=0; i<=esameCorrente.risultati.size(); i++){ %>
 				
+				<li>${esameCorrente.risultati[i]}</li>			
 				
-				<a href="/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
-				<a href="/homePage">	<button type="button">Torna alla HomePage</button></a>
+				<% 	} %>
+			</ul>
+				
+				<a href="/ProgettoSiwClinica/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
+				<a href="/ProgettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
 </body>
+
 </html>

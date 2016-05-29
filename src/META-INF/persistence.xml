@@ -4,9 +4,13 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="clinicaAcme-unit"
 		transaction-type="RESOURCE_LOCAL">
+		<class>model.Amministratore</class>
 		<class>model.Esame</class>
-		<class>model.TipologiaEsame</class>
+		<class>model.Medico</class>
 		<class>model.Paziente</class>
+		<class>model.Prerequisito</class>
+		<class>model.Risultato</class>
+		<class>model.TipologiaEsame</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
@@ -17,6 +21,7 @@
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+		
 
 		</properties>
 

@@ -19,9 +19,10 @@
 			<br>
 			<div>	<a href="/ProgettoSiwClinica\inserisciRisultati.jsp"><h1>Inserisci Risultati di un Esame</h1></a>	</div>
 			<br>
-			<div>	<a href="/ProgettoSiwClinica\newPaziente.jsp"><h1>Registra Nuovo Paziente</h1></a>	</div>
+			<div>	<a href="/ProgettoSiwClinica\registerPaziente.jsp"><h1>Registra Nuovo Paziente</h1></a>	</div>
 
 
 
 </body>
+
 </html>

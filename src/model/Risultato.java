@@ -8,8 +8,8 @@ import javax.persistence.GenerationType;
 public class Risultato {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String codice;
 	private Long id;
+	private String codice;
 	private String nome;
 	private String risultato;
 	public String getCodice() {

@@ -2,8 +2,9 @@ package model;
 
 import javax.persistence.*;
 import java.util.*;
+
 @Entity
-@NamedQuery(name="findAllTipologie",query = "SELECT t FROM TipologiaEsame t")
+@NamedQuery(name = "findAllTipologie", query = "SELECT t FROM TipologiaEsame t")
 public class TipologiaEsame {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,11 +14,16 @@ public class TipologiaEsame {
 	private String descrizione;
 	private double costo;
 	@OneToMany
-	@Column(name = "tipologiaEsame_fk")
+	@JoinColumn(name = "tipologiaEsame_fk")
 	private List<Prerequisito> prerequisiti;
 	@OneToMany
-	@Column(name = "tipologiaEsame_fk")
+	@JoinColumn(name = "tipologiaEsame_fk")
 	private List<Risultato> risultati;
+
+	public TipologiaEsame() {
+		this.risultati = new LinkedList<>();
+		this.prerequisiti = new LinkedList<>();
+	}
 
 	public Long getId() {
 		return id;
@@ -59,8 +65,6 @@ public class TipologiaEsame {
 		this.costo = costo;
 	}
 
-	
-
 	public List<Prerequisito> getPrerequisiti() {
 		return prerequisiti;
 	}
@@ -75,6 +79,14 @@ public class TipologiaEsame {
 
 	public void setRisultati(List<Risultato> risultati) {
 		this.risultati = risultati;
+	}
+
+	public void addRisultato(Risultato risultato) {
+		this.risultati.add(risultato);
+	}
+	
+	public void addPrerequisito(Prerequisito prerequisito){
+		this.prerequisiti.add(prerequisito);
 	}
 
 	@Override
