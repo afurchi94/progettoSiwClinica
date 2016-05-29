@@ -1,82 +1,40 @@
 package model;
 
 import javax.persistence.*;
-import java.util.*;
+import javax.persistence.GenerationType;
+
 @Entity
-@NamedQuery(name="findAllTipologie",query = "SELECT t FROM TipologiaEsame t")
-public class TipologiaEsame {
+public class Prerequisito {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String codice;
 	private String nome;
 	private String descrizione;
-	private double costo;
-	@OneToMany
-	@Column(name = "tipologiaEsame_fk")
-	private List<Prerequisito> prerequisiti;
-	@OneToMany
-	@Column(name = "tipologiaEsame_fk")
-	private List<Risultato> risultati;
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getCodice() {
 		return codice;
 	}
-
 	public void setCodice(String codice) {
 		this.codice = codice;
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 	public String getDescrizione() {
 		return descrizione;
 	}
-
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-
-	public double getCosto() {
-		return costo;
-	}
-
-	public void setCosto(double costo) {
-		this.costo = costo;
-	}
-
-	
-
-	public List<Prerequisito> getPrerequisiti() {
-		return prerequisiti;
-	}
-
-	public void setPrerequisiti(List<Prerequisito> prerequisiti) {
-		this.prerequisiti = prerequisiti;
-	}
-
-	public List<Risultato> getRisultati() {
-		return risultati;
-	}
-
-	public void setRisultati(List<Risultato> risultati) {
-		this.risultati = risultati;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -84,7 +42,6 @@ public class TipologiaEsame {
 		result = prime * result + ((codice == null) ? 0 : codice.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -93,7 +50,7 @@ public class TipologiaEsame {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TipologiaEsame other = (TipologiaEsame) obj;
+		Prerequisito other = (Prerequisito) obj;
 		if (codice == null) {
 			if (other.codice != null)
 				return false;
@@ -101,11 +58,6 @@ public class TipologiaEsame {
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "TipologiaEsame [id=" + id + ", codice=" + codice + ", nome=" + nome + ", descrizione=" + descrizione
-				+ ", costo=" + costo + "]";
-	}
-
+	
+	
 }
