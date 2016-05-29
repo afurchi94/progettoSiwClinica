@@ -46,6 +46,7 @@ public class Facade {
 		// aggiunta del prerequisito alla tipologia di esame
 
 		tipologia.addPrerequisito(prerequisito);
+		prerequisito.addTipologiaEsame(tipologia);
 		tipologia.addRisultato(risultato);
 		// inserimento tipologia esame
 		

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.*;
+
 import javax.persistence.*;
 import javax.persistence.GenerationType;
 
@@ -11,8 +13,14 @@ public class Prerequisito {
 	private String codice;
 	private String nome;
 	private String descrizione;
+	@ManyToMany
+	private List<TipologiaEsame> tipologie;
 	public Long getId() {
 		return id;
+	}
+	
+	public Prerequisito(){
+		this.tipologie = new LinkedList<>();
 	}
 	public void setId(Long id) {
 		this.id = id;
@@ -34,6 +42,17 @@ public class Prerequisito {
 	}
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
+	}
+	
+	public List<TipologiaEsame> getTipologie() {
+		return tipologie;
+	}
+
+	public void setTipologie(List<TipologiaEsame> tipologie) {
+		this.tipologie = tipologie;
+	}
+	public void addTipologiaEsame(TipologiaEsame tipologia){
+		this.tipologie.add(tipologia);
 	}
 	@Override
 	public int hashCode() {
