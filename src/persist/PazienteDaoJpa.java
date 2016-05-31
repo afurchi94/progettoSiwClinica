@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import controllerAutenticazione.paziente.Action;
+import model.Facade;
 import model.Paziente;
 
 public class PazienteDaoJpa implements PazienteDao {
@@ -31,7 +33,7 @@ public class PazienteDaoJpa implements PazienteDao {
 
 	@Override
 	public Paziente find(EntityManager em, Paziente paziente) {
-		return em.find(paziente.getClass(), paziente.getId());
+		return em.find(paziente.getClass(), paziente.getUsername());
 	}
 
 	@Override

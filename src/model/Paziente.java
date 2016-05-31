@@ -10,40 +10,31 @@ import javax.persistence.*;
 @NamedQuery(name = "findAllPazienti", query = "SELECT p FROM Paziente p")
 public class Paziente {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	private String codice;
+	private String username;
 	private String password;
 	private String nome;
 	private String cognome;
 	private Date dataNascita;
 	private String codiceFiscale;
-	//problema del doppio riferimento.
+	// problema del doppio riferimento.
 	@OneToMany
 	@JoinColumn(name = "pazientePrenotato_id")
 	private List<Esame> esamiPrenotati;
 	@OneToMany
 	@JoinColumn(name = "pazienteEffettuato_id")
 	private List<Esame> esamiEffettuati;
+
 	public Paziente() {
 		this.esamiPrenotati = new LinkedList<>();
 		this.esamiEffettuati = new LinkedList<>();
 	}
 
-	public Long getId() {
-		return id;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getCodice() {
-		return codice;
-	}
-
-	public void setCodice(String codice) {
-		this.codice = codice;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -97,8 +88,6 @@ public class Paziente {
 	public void addEsamePrenotato(Esame esame) {
 		this.esamiPrenotati.add(esame);
 	}
-	
-	
 
 	public List<Esame> getEsamiEffettuati() {
 		return esamiEffettuati;
@@ -107,7 +96,7 @@ public class Paziente {
 	public void setEsamiEffettuati(List<Esame> esamiEffettuati) {
 		this.esamiEffettuati = esamiEffettuati;
 	}
-	
+
 	public void addEsameEffettuato(Esame esame) {
 		this.esamiEffettuati.add(esame);
 	}
@@ -137,10 +126,8 @@ public class Paziente {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Paziente [id=" + id + ", codice=" + codice + ", password=" + password + ", nome=" + nome + ", cognome="
-				+ cognome + ", dataNascita=" + dataNascita + ", codiceFiscale=" + codiceFiscale + "]";
+	public boolean checkPassword(String password) {
+		return this.password.equals(password);
 	}
 
 }

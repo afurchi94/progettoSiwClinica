@@ -13,8 +13,7 @@ public class TipologiaEsame {
 	private String nome;
 	private String descrizione;
 	private double costo;
-	@OneToMany
-	@JoinColumn(name = "tipologiaEsame_fk")
+	@ManyToMany(mappedBy = "tipologie")
 	private List<Prerequisito> prerequisiti;
 	@OneToMany
 	@JoinColumn(name = "tipologiaEsame_fk")
