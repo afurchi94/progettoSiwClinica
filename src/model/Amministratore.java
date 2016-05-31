@@ -5,32 +5,31 @@ import javax.persistence.*;
 @Entity
 public class Amministratore {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	private String codiceId;
-	private String pwd;
+	private String username;
+	private String password;
+	private String codice;
 
-	public Long getId() {
-		return id;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getCodiceId() {
-		return codiceId;
+	public String getCodice() {
+		return codice;
 	}
 
-	public void setCodiceId(String codiceId) {
-		this.codiceId = codiceId;
+	public void setCodice(String codice) {
+		this.codice = codice;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codiceId == null) ? 0 : codiceId.hashCode());
+		result = prime * result + ((codice == null) ? 0 : codice.hashCode());
 		return result;
 	}
 
@@ -43,13 +42,20 @@ public class Amministratore {
 		if (getClass() != obj.getClass())
 			return false;
 		Amministratore other = (Amministratore) obj;
-		if (codiceId == null) {
-			if (other.codiceId != null)
+		if (codice == null) {
+			if (other.codice != null)
 				return false;
-		} else if (!codiceId.equals(other.codiceId))
+		} else if (!codice.equals(other.codice))
 			return false;
 		return true;
 	}
 
-	
+	public boolean checkPassword(String password) {
+		return this.password.equals(password);
+	}
+
+	public void setPassoword(String password) {
+		this.password = password;
+	}
+
 }

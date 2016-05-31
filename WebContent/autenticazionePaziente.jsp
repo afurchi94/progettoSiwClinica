@@ -4,18 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Autenticazione Amministrazione</title>
+<title>Autenticazione Paziente</title>
 </head>
 <body>
 
 
 	<div>
-		<h2>Inserimento Dati Amministratore</h2>
+		<h2>Inserimento Dati Paziente</h2>
 		<div class="col-md-4 col-md-offset-4">
 
 			<div class="form_container">
 				<!-- controller Amministrazione da implementare-->
-				<form action="controllerAutenticazioneAmministrazione" method="post">
+				<form action="controllerAutenticazionePaziente" method="post">
 					<div class="form-group">
 
 						<!-- Messaggio di errore di login errato da implementare-->
