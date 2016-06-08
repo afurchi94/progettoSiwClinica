@@ -13,9 +13,9 @@
 		<br><br>
 		
 		<div class="zona_superione">
-			<div align="left" style="font-size:160%;">	<a href="/ProgettoSiwClinica/consultazioneTipologieEsame.jsp">Esami Offerti Dalla Clinica</a>	</div>
-			<div align="center" style="font-size:160%;" >	<a href="/ProgettoSiwClinica/autenticazionePaziente.jsp">Autenticazione Paziente</a></div>
-			<div align="right" style="font-size:160%;">	<a href="/ProgettoSiwClinica/autenticazioneAmministrazione.jsp">Autenticazione Amministrazione</a></div>
+			<div align="left" style="font-size:160%;">	<a href="/progettoSiwClinica/consultazioneTipologieEsame.jsp">Esami Offerti Dalla Clinica</a>	</div>
+			<div align="center" style="font-size:160%;" >	<a href="/progettoSiwClinica/autenticazionePaziente.jsp">Autenticazione Paziente</a></div>
+			<div align="right" style="font-size:160%;">	<a href="/progettoSiwClinica/autenticazioneAmministrazione.jsp">Autenticazione Amministrazione</a></div>
 		</div>
 		<br><br><br>
 		<hr><hr>

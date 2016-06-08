@@ -87,4 +87,12 @@ public class Facade {
 		return null;
 	}
 
+	
+public static void main(String[] args) {
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
+	EntityManager em = emf.createEntityManager();
+	
+	em.close();
+	emf.close();
+}
 }
