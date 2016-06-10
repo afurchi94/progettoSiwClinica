@@ -87,6 +87,7 @@ public class Esame {
 
 	public void setRisultati(List<Risultato> risultati) {
 		this.risultati = risultati;
+		this.medico.addEsame(this);
 	}
 
 	public void aggiungiPrenotazioneAPaziente(){

@@ -22,6 +22,7 @@ public class Action {
 
 		// metti le date con l'annotazione nella classe Paziente.
 	 facade.inserisciPaziente(paziente);
+	 facade.confermaInserimentoPaziente();
 	 HttpSession session = req.getSession();
 	 session.setAttribute("paziente", paziente);
 	}

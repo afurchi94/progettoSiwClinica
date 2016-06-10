@@ -17,10 +17,10 @@ public class Paziente {
 	private Date dataNascita;
 	
 	// problema del doppio riferimento.
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "pazientePrenotato_id")
 	private List<Esame> esamiPrenotati;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "pazienteEffettuato_id")
 	private List<Esame> esamiEffettuati;
 

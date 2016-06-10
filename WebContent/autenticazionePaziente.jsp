@@ -21,7 +21,7 @@
 						<!-- Messaggio di errore di login errato da implementare-->
 						<p>${DatiError}</p>
 						<p>${CodiceError}</p>
-						<label>Codice Paziente</label> <input type="text" class="form-control"
+						<label>Codice Fiscale Paziente</label> <input type="text" class="form-control"
 							placeholder="Cod Paziente" name="codice"
 							value='${param["codice"]}'>
 					</div>

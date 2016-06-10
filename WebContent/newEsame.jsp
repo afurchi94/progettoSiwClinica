@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
   <%@ page import="java.util.*"%>
   <%@ page import="model.TipologiaEsame"%>
+   <%@ page import="model.Facade"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,9 +21,9 @@
 						
 						<select name="tipologia" >
 							<% 
-							List<TipologiaEsame> tipologie= //me la devo far passare dalla request o session dalla named query
-							for( int i=0; i<=tipologie.size(); i++){ %>
-								<option class="form-control"  value="${tipologie[i].nome}"> ${tipologie[i].nome}</option><br>
+							List<TipologiaEsame> tipologie= new Facade().getTipologieEsame();//me la devo far passare dalla request o session dalla named query
+							for(TipologiaEsame t: tipologie){ %>
+								<option class="form-control"  value="${t.nome}"> ${t.nome}</option><br>
 							<% 	} %>
 						</select>
 					</div>

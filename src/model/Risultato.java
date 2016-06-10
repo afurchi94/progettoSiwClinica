@@ -9,15 +9,9 @@ public class Risultato {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String codice;
 	private String nome;
 	private String risultato;
-	public String getCodice() {
-		return codice;
-	}
-	public void setCodice(String codice) {
-		this.codice = codice;
-	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -40,7 +34,7 @@ public class Risultato {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codice == null) ? 0 : codice.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -52,10 +46,10 @@ public class Risultato {
 		if (getClass() != obj.getClass())
 			return false;
 		Risultato other = (Risultato) obj;
-		if (codice == null) {
-			if (other.codice != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!codice.equals(other.codice))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}

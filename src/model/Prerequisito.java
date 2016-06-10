@@ -8,29 +8,12 @@ import javax.persistence.GenerationType;
 @Entity
 public class Prerequisito {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	private String codice;
 	private String nome;
 	private String descrizione;
-	@ManyToMany
-	private List<TipologiaEsame> tipologie;
-	public Long getId() {
-		return id;
-	}
 	
-	public Prerequisito(){
-		this.tipologie = new LinkedList<>();
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getCodice() {
-		return codice;
-	}
-	public void setCodice(String codice) {
-		this.codice = codice;
-	}
+
+	public Prerequisito(){}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -44,21 +27,12 @@ public class Prerequisito {
 		this.descrizione = descrizione;
 	}
 	
-	public List<TipologiaEsame> getTipologie() {
-		return tipologie;
-	}
-
-	public void setTipologie(List<TipologiaEsame> tipologie) {
-		this.tipologie = tipologie;
-	}
-	public void addTipologiaEsame(TipologiaEsame tipologia){
-		this.tipologie.add(tipologia);
-	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codice == null) ? 0 : codice.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 	@Override
@@ -70,10 +44,10 @@ public class Prerequisito {
 		if (getClass() != obj.getClass())
 			return false;
 		Prerequisito other = (Prerequisito) obj;
-		if (codice == null) {
-			if (other.codice != null)
+		if (nome == null) {
+			if (other.nome != null)
 				return false;
-		} else if (!codice.equals(other.codice))
+		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
 	}

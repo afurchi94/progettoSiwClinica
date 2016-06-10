@@ -7,13 +7,11 @@ import java.util.*;
 @NamedQuery(name = "findAllTipologie", query = "SELECT t FROM TipologiaEsame t")
 public class TipologiaEsame {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	private String codice;
 	private String nome;
 	private String descrizione;
 	private double costo;
-	@ManyToMany(mappedBy = "tipologie")
+	@OneToMany(mappedBy = "nome")
 	private List<Prerequisito> prerequisiti;
 	@OneToMany
 	@JoinColumn(name = "tipologiaEsame_fk")
@@ -22,14 +20,6 @@ public class TipologiaEsame {
 	public TipologiaEsame() {
 		this.risultati = new LinkedList<>();
 		this.prerequisiti = new LinkedList<>();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getCodice() {
@@ -115,7 +105,7 @@ public class TipologiaEsame {
 
 	@Override
 	public String toString() {
-		return "TipologiaEsame [id=" + id + ", codice=" + codice + ", nome=" + nome + ", descrizione=" + descrizione
+		return "TipologiaEsame [codice=" + codice + ", nome=" + nome + ", descrizione=" + descrizione
 				+ ", costo=" + costo + "]";
 	}
 

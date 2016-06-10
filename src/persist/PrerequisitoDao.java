@@ -9,7 +9,7 @@ public interface PrerequisitoDao {
 
 	public void delete(EntityManager em, Prerequisito prerequisito);
 
-	public Prerequisito find(EntityManager em, Long id);
+	public Prerequisito find(EntityManager em, Prerequisito prerequisito);
 
 	public void update(EntityManager em, Prerequisito prerequisito);
 

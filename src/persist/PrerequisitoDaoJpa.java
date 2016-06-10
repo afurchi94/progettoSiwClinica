@@ -31,8 +31,8 @@ public class PrerequisitoDaoJpa implements PrerequisitoDao {
 	}
 
 	@Override
-	public Prerequisito find(EntityManager em, Long id) {
-		return em.find(Prerequisito.class, id);
+	public Prerequisito find(EntityManager em, Prerequisito prerequisito) {
+		return em.find(Prerequisito.class, prerequisito);
 	}
 
 	@Override
