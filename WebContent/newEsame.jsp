@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="model.Clinica"%>
+  <%@ page import="java.util.*"%>
+  <%@ page import="model.TipologiaEsame"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,9 +17,14 @@
 					<div class="form-group">
 						<p>${tipologiaError}</p>
 						<label>Tipologia Esame</label>
-						<% for( int i=0; i<=tipologie.size(); i++){ %>
-						<input type="radio" class="form-control"  name="tipologiaEsame"  value=tipologie[i] }> ${tipologie[i].nome}<br>
-						<% 	} %>
+						
+						<select name="tipologia" >
+							<% 
+							List<TipologiaEsame> tipologie= //me la devo far passare dalla request o session dalla named query
+							for( int i=0; i<=tipologie.size(); i++){ %>
+								<option class="form-control"  value="${tipologie[i].nome}"> ${tipologie[i].nome}</option><br>
+							<% 	} %>
+						</select>
 					</div>
 					
 	<!-- L-inserimento della data ora è un po barbaro, ma dovrebbe funzionare... Se non funziona dobbiamo per forza usare quello del prof-->				

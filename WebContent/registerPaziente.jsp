@@ -33,6 +33,12 @@
 				out.print(request.getParameter("cognome"));%>" />
 
 		</p>
+		<p>'${erroreCodiceFiscale}'</p>
+		<p>
+		Codice Fiscale <input type="text" name="codiceFiscale" placeholder="Cod Fiscale"
+				value='${param["codiceFiscale"]}' />
+		</p>
+		
 		<p>
 			<%
 				if (request.getAttribute("erroreDataNascita") != null)
@@ -49,6 +55,8 @@
 		</p>
 		<input type="submit" name="submit" value="Registra Paziente" />
 		</p>
+		${erroreInserimento}
+		
 	</form>
 </body>
 </html>

@@ -31,8 +31,8 @@
 				<% 	} %>
 			</ul>
 				
-				<a href="/ProgettoSiwClinica/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
-				<a href="/ProgettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
+				<a href="/progettoSiwClinica/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
+				<a href="/progettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
 </body>
 
 </html>

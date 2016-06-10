@@ -22,6 +22,8 @@ public class Esame {
 	@OneToMany
 	@Column(name = "esame_fk")
 	private List<Risultato> risultati;
+	@OneToOne
+	private Medico medico;
 
 	public Long getId() {
 		return id;
@@ -29,6 +31,14 @@ public class Esame {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Medico getMedico() {
+		return medico;
+	}
+
+	public void setMedico(Medico medico) {
+		this.medico = medico;
 	}
 
 	public String getCodice() {
@@ -79,6 +89,13 @@ public class Esame {
 		this.risultati = risultati;
 	}
 
+	public void aggiungiPrenotazioneAPaziente(){
+		this.paziente.addEsamePrenotato(this);
+	}
+	
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

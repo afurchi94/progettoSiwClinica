@@ -7,7 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>Hai Inserito un nuovo Paziente con questi dati:</h1>
 	<p>Nome: ${paziente.nome}</p>
 	<p>Cognome: ${paziente.cognome}</p>
+	<strong>
+	<p>Username: ${paziente.username}</p>
+	<p>Password: ${paziente.password}</p>
+	</strong>
+	<p>Cod. Fiscale: ${paziente.codFiscale}</p>
+	<p>Data di Nascita: ${paziente.dataNascita}</p>
 </body>
 </html>

@@ -4,31 +4,38 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Amministratore;
+import model.Paziente;
 
 public class Helper {
 	public boolean validate(HttpServletRequest req, HttpServletResponse resp) {
 		boolean correct = true;
-
-		String username = req.getParameter("username");
+		
+		String codiceFiscale = req.getParameter("codice");
 		String password = req.getParameter("password");
+		
+		
+		
+		
+			if (codiceFiscale.equals("")) {
+				correct = false;
+				req.setAttribute("CodiceError", "Codice vuoto");
+			}
+			if (password.equals("")) {
+				correct = false;
+				req.setAttribute("PasswordError", "Password vuota");
+			}
 
-		if (username.equals("")) {
-			correct = false;
-			req.setAttribute("UsernameError", "Username vuoto");
-		}
-		if (password.equals("")) {
-			correct = false;
-			req.setAttribute("PasswordError", "Password vuota");
-		}
+			if (correct) {
+				Paziente paziente = new Paziente();
+				
+				
+				paziente.setPassword(password);
+				paziente.setCodiceFiscale(codiceFiscale);
 
-		if (correct) {
-			Amministratore amministratore = new Amministratore();
-			amministratore.setPassoword(password);
-			amministratore.setUsername(username);
+				req.setAttribute("paziente", paziente);
+			}
 
-			req.setAttribute("amministratore", amministratore);
-		}
-
-		return correct;
+			return correct;
+	
 	}
 }

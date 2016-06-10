@@ -14,9 +14,14 @@ public class Helper {
 
 		String nome = req.getParameter("nome");
 		String cognome = req.getParameter("cognome");
+		String codiceFiscale= req.getParameter("codiceFiscale");
 		String pattern = "yyyy-MM-dd";
 		DateValidator validator = new DateValidator();
 		String dataNascita = req.getParameter("dataNascita");
+		if (codiceFiscale.equals("")) {
+			correct = false;
+			req.setAttribute("erroreCodiceFiscale", "Questo campo è obbligatorio");
+		}
 		if (nome.equals("")) {
 			correct = false;
 			req.setAttribute("erroreNome", "Questo campo è obbligatorio");
@@ -38,6 +43,7 @@ public class Helper {
 			Paziente paziente = new Paziente();
 			paziente.setCognome(cognome);
 			paziente.setNome(nome);
+			paziente.setCodiceFiscale(codiceFiscale);
 			// il metodo validate converte la string in una data di quel
 			// formato.
 			paziente.setDataNascita(validator.validate(dataNascita, pattern));

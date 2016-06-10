@@ -20,10 +20,10 @@
 
 						<!-- Messaggio di errore di login errato da implementare-->
 						<p>${DatiError}</p>
-						<p>${UsernameError}</p>
-						<label>Username</label> <input type="text" class="form-control"
-							placeholder="Username" name="username"
-							value='${param["username"]}'>
+						<p>${CodiceError}</p>
+						<label>Codice Paziente</label> <input type="text" class="form-control"
+							placeholder="Cod Paziente" name="codice"
+							value='${param["codice"]}'>
 					</div>
 
 					<div class="form-group">

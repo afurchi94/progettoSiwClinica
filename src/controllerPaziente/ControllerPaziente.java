@@ -25,15 +25,27 @@ public class ControllerPaziente extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		
 		String nextPage = "/registerPaziente.jsp";
 
 		Helper helper = new Helper();
 		Action action = new Action();
 
 		if (helper.validate(req, resp)) {
-			action.execute(req);
+			action.esegui(req);
 		}
-		//serve il dispatcher!
+
+		if (helper.validate(req, resp)) {
+			action.esegui(req);
+			nextPage = "/paziente.jsp";
+		}else
+			req.setAttribute("erroreInserimento", "C'è stato un errore nell'inserimento del Paziente");
+
+		
+	
+		ServletContext application = getServletContext();
+		RequestDispatcher rd = application.getRequestDispatcher(nextPage);
+		rd.forward(req, resp);
 
 	}
 

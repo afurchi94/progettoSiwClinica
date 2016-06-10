@@ -33,7 +33,7 @@
 
 
 <br><br>
-<a href="/ProgettoSiwClinica/homePage"><button type="button">Torna alla Home Page</button></a>
+<a href="/progettoSiwClinica/homePage"><button type="button">Torna alla Home Page</button></a>
 </body>
 
 </html>

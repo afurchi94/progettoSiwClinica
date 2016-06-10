@@ -19,8 +19,8 @@
 </ul>
 
 
-<a href="/ProgettoSiwClinica/vediMedici">	<button type="button">Cerca altro Medico</button></a>
-<a href="/ProgettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
+<a href="/progettoSiwClinica/vediMedici">	<button type="button">Cerca altro Medico</button></a>
+<a href="/progettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
 </body>
 
 </html>

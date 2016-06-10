@@ -24,8 +24,8 @@
 			</p>
 			<div align="center">
 			<h1>Confermi l`inserimento dei Risultati dell`Esame?</h1>
-			<a href="/ProgettoSiwClinica/areaAmministrazione">	<button type="button"  onclick="alert('Risultati Esame inseriti con Successo')">Conferma Inserimento Risultati</button></a>
-			<a href="/ProgettoSiwClinica/inserisciRisultati">	<button type="button">Torna Indietro</button></a>
+			<a href="/progettoSiwClinica/areaAmministrazione">	<button type="button"  onclick="alert('Risultati Esame inseriti con Successo')">Conferma Inserimento Risultati</button></a>
+			<a href="/progettoSiwClinica/inserisciRisultati">	<button type="button">Torna Indietro</button></a>
 		</div>
 		</div>
 

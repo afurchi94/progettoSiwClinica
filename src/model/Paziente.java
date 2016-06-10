@@ -10,12 +10,12 @@ import javax.persistence.*;
 @NamedQuery(name = "findAllPazienti", query = "SELECT p FROM Paziente p")
 public class Paziente {
 	@Id
-	private String username;
+	private String codiceFiscale;
 	private String password;
 	private String nome;
 	private String cognome;
 	private Date dataNascita;
-	private String codiceFiscale;
+	
 	// problema del doppio riferimento.
 	@OneToMany
 	@JoinColumn(name = "pazientePrenotato_id")
@@ -29,21 +29,19 @@ public class Paziente {
 		this.esamiEffettuati = new LinkedList<>();
 	}
 
-	public String getUsername() {
-		return username;
-	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
 
 	public String getPassword() {
 		return password;
 	}
 
+
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 
 	public String getNome() {
 		return nome;
@@ -101,6 +99,7 @@ public class Paziente {
 		this.esamiEffettuati.add(esame);
 	}
 
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

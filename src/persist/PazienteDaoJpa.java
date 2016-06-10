@@ -33,7 +33,7 @@ public class PazienteDaoJpa implements PazienteDao {
 
 	@Override
 	public Paziente find(EntityManager em, Paziente paziente) {
-		return em.find(paziente.getClass(), paziente.getUsername());
+		return em.find(paziente.getClass(), paziente.getCodiceFiscale());
 	}
 
 	@Override

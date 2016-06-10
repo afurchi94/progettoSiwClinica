@@ -14,7 +14,7 @@ public class Action {
 		Amministratore amministratore = facade.loginAmministrazione(username, password);
 		if (amministratore != null) {
 			HttpSession session = req.getSession();
-			session.setAttribute("amministratore", amministratore);
+			session.setAttribute("amministratoreLogin", amministratore);
 			return "OK";
 		} else{
 			req.setAttribute("DatiError", "I dati inseriti non sono corretti!");
