@@ -1,4 +1,4 @@
-package controllerVisualizzaTipologie;
+package controllerMedico;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,12 +10,12 @@ public class Helper {
 	public boolean validate(HttpServletRequest req, HttpServletResponse resp) {
 		boolean correct = false;
 
-		String medico = req.getParameter("codMedico");
+		String codice = req.getParameter("codMedico");
 	
-	if(medico != null && !medico.equals("")){
+	if(codice != null && !codice.equals("")){
 			correct = true;
 		}else
-			req.setAttribute("erroreMedico", "mi hai passato un codice nullo o vuoto");
+			req.setAttribute("erroreMedico", "Codice Medico Obbligatorio!");
 	return correct;
 	}
 }

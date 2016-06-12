@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Time;
 import java.util.*;
 
 import javax.persistence.*;
@@ -10,20 +11,43 @@ public class Esame {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String codice;
+	String codice;
+	@Temporal(TemporalType.DATE)
 	private Date dataPrenotazione;
+	
+	private Time oraPrenotazione;
+	@Temporal(TemporalType.DATE)
 	private Date dataEffettuazione;
-	@OneToOne
-	@JoinColumn(name="tipologia_fk")
+	@OneToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@JoinColumn(name="tipologiaesame_fk")
 	private TipologiaEsame tipologia;
-	@OneToOne
+	@ManyToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
 	@JoinColumn(name="paziente_fk")
 	private Paziente paziente;
-	@OneToMany
-	@Column(name = "esame_fk")
+	@OneToMany( fetch = FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@JoinColumn(name = "esame_fk")
 	private List<Risultato> risultati;
-	@OneToOne
+	@ManyToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Medico medico;
+
+	
+	
+	
+	public Time getOraPrenotazione() {
+		return oraPrenotazione;
+	}
+
+	public void setOraPrenotazione(Time oraPrenotazione) {
+		this.oraPrenotazione = oraPrenotazione;
+	}
+
+	public String getCodice() {
+		return codice;
+	}
+
+	public void setCodice(String codice) {
+		this.codice = codice;
+	}
 
 	public Long getId() {
 		return id;
@@ -41,13 +65,6 @@ public class Esame {
 		this.medico = medico;
 	}
 
-	public String getCodice() {
-		return codice;
-	}
-
-	public void setCodice(String codice) {
-		this.codice = codice;
-	}
 
 	public Date getDataPrenotazione() {
 		return dataPrenotazione;
@@ -86,8 +103,10 @@ public class Esame {
 	}
 
 	public void setRisultati(List<Risultato> risultati) {
+		
 		this.risultati = risultati;
 		this.medico.addEsame(this);
+	
 	}
 
 	public void aggiungiPrenotazioneAPaziente(){
@@ -101,7 +120,7 @@ public class Esame {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codice == null) ? 0 : codice.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -114,17 +133,17 @@ public class Esame {
 		if (getClass() != obj.getClass())
 			return false;
 		Esame other = (Esame) obj;
-		if (codice == null) {
-			if (other.codice != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!codice.equals(other.codice))
+		} else if (!(id==other.id))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Esame [id=" + id + ", codice=" + codice + ", dataPrenotazione=" + dataPrenotazione
+		return "Esame [id=" + id +", dataPrenotazione=" + dataPrenotazione
 				+ ", dataEfettuazione=" + dataEffettuazione + ", tipologia=" + tipologia + ", paziente=" + paziente
 				+ "]";
 	}

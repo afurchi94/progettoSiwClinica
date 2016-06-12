@@ -17,11 +17,10 @@ public class Paziente {
 	private Date dataNascita;
 	
 	// problema del doppio riferimento.
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "pazientePrenotato_id")
+	@OneToMany(mappedBy="paziente", fetch = FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	private List<Esame> esamiPrenotati;
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "pazienteEffettuato_id")
+	//con fetch lazy mi da errore 
+	@OneToMany(mappedBy="paziente",fetch = FetchType.EAGER, cascade= CascadeType.PERSIST)
 	private List<Esame> esamiEffettuati;
 
 	public Paziente() {

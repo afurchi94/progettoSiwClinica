@@ -12,21 +12,25 @@
 <body>
 	<h1>Tipologie di Esame offerte dalla Clinica:</h1>
 			clicca su una tipologia per vederne i dettagli(piu avanti implemento anche il link su ogni tipologia stampata)
-			<ul >
-			<form action="controllerVisualizzaTipologie" >
-			<% Facade facade = new Facade();
-			List<TipologiaEsame> tipologie = facade.getTipologieEsame();
-			if(tipologie.size()>0){
-			for(TipologiaEsame t : tipologie){ %>
-				
-				<li><button type="submit" name="codTipologia" value="${t.codice}">${t.nome}</button> - ${t.codice} - ${t.costo} - ${t.descrizione}</li>			
-				
+			<ul>
+			
+				<% Facade facade = new Facade();
+				List<TipologiaEsame> tipologie = facade.getTipologieEsame();
+				if(tipologie.size()>0){
+				for(TipologiaEsame t : tipologie){ 
+				request.setAttribute("t", t);%>
+				<form action="controllerVisualizzaTipologie" method="get">
+				<li>
+				<button type="submit" name="codTipologia" value='${t.codice}'>${t.codice}</button> -${t.nome} - ${t.costo} - ${t.descrizione}
+				</li>			
+				</form>
 			<% 	}}else{ %>
 				<li><h4>Non Sono presenti Tipologie nel Sistema</h4></li>
 			
 			<%}%>
+			
 			</ul>
-			</form>
+			${erroreTipo}
 </body>
 
 </html>

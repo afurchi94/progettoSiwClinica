@@ -1,6 +1,6 @@
-package controllerVisualizzaTipologie;
+package controllerVisualizzaEsami;
 
-import model.Medico;
+import model.Esame;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,8 +11,8 @@ public class Action {
 
 	public void execute(HttpServletRequest req) {
 		facade = new Facade();
-		Medico medico = facade.selezionaMedico(req.getParameter("codMedico"));		
-		req.setAttribute("medico", medico);
+		Esame esame = facade.scegliEsame(req.getParameter("idEsame"));		
+		req.setAttribute("esame", esame);
 	}
 
 }

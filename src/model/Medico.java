@@ -9,26 +9,30 @@ import javax.persistence.*;
 @NamedQuery(name="findAllMedici",query = "SELECT m FROM Medico m")
 public class Medico {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	private String codice;
 	private String nome;
 	private String cognome;
-	@OneToMany
-	@JoinColumn(name = "medico_fk")
+	private String specializzazione;
+	@OneToMany(mappedBy="medico", fetch= FetchType.LAZY, cascade=CascadeType.PERSIST)
 	private List<Esame> esami;
-
+             
 	public Medico() {
 		this.esami = new LinkedList<>();
 	}
 
-	public Long getId() {
-		return id;
+	
+
+	public String getSpecializzazione() {
+		return specializzazione;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+
+
+	public void setSpecializzazione(String specializzazione) {
+		this.specializzazione = specializzazione;
 	}
+
+
 
 	public String getCodice() {
 		return codice;

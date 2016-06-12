@@ -3,6 +3,7 @@
     <%@ page import="model.Paziente"%>
     <%@ page import="model.Esame"%>
     <%@ page import="model.Medico"%>
+    <%@ page import ="model.Risultato" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,25 +12,36 @@
 </head>
 <body>
 
-	<h1>Esame : ${esameCorrente.codice}</h1>
+	<h1>Esame : ${esame.codice}</h1>
 
 			<ul >
-				<li>Tipologia: ${esameCorrente.tipologia}</li>
-				<li>Paziente: : ${paziente.cognome} ${paziente.nome}</li>
+				<li>Tipologia: ${esame.tipologia}</li>
+				<li>Paziente: : ${esame.paziente.cognome} ${esame.paziente.nome}</li>
 				<li>Codice Fiscale: ${paziente.codFiscale}</li>
-				<li>Data Esame: ${esameCorrente.dataEsame}</li>
-				<li>Data Prenotazione: ${esameCorrente.dataPrenotazione} ${esameCorrente.oraPrenotazione}</li>
-				<li>Medico: ${medico.cognome} ${medico.nome}</li>
+				<li>Data Esame: ${esame.dataEffettuazione}</li>
+				<li>Data Prenotazione: ${esame.dataPrenotazione} alle: ${esame.oraPrenotazione}</li>
+				<li>Medico: ${esame.medico.cognome} ${esame.medico.nome}</li>
 			</ul>
-				Risultati: 
-				<ul >
-				<li>${esame.risultati}</li>
-				<% for( int i=0; i<=esameCorrente.risultati.size(); i++){ %>
-				
-				<li>${esameCorrente.risultati[i]}</li>			
-				
-				<% 	} %>
-			</ul>
+	
+<BR>
+Risultati Esame: 
+
+<ul >
+	<%Esame esame= (Esame)request.getAttribute("esame");
+	if(esame!=null){
+	if(esame.getRisultati().size() >0){ 
+	for( Risultato r : esame.getRisultati()){ %>	
+		<li>${r.nome} : ${r.risultato}</li>			
+	<% 	}}else{ %>
+	<li>Esame Senza Risultati</li>
+	<%} }else{%>
+	<li>Tipologia Corrente Nulla</li>
+	
+	<%} %>
+</ul>
+
+
+</ul>
 				
 				<a href="/progettoSiwClinica/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
 				<a href="/progettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>

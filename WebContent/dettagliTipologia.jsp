@@ -3,6 +3,7 @@
 <%@ page import="model.TipologiaEsame"%>
     <%@ page import="model.Prerequisito"%>
         <%@ page import="model.Risultato"%>
+  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,21 +19,31 @@
 <li>Pre-Requisiti:
 
 <ul >
-	<% TipologiaEsame tipologiaCorrente= (TipologiaEsame)request.getAttribute("tipologia");
+	<%TipologiaEsame tipologiaCorrente= (TipologiaEsame)request.getAttribute("tipologia");
+	if(tipologiaCorrente!=null){
+	if(tipologiaCorrente.getPrerequisiti().size() >0){
 	for( Prerequisito p : tipologiaCorrente.getPrerequisiti()){ %>	
 		<li>${p.nome}</li>
 		<li>${p.descrizione}</li>			
-	<% 	} %>
+	<% 	}}else{ %>
+	<li>Tipologia Senza Prerequisiti</li>
+	<%} %>
 </ul>
-</li>
-<li>Risultati Esame: 
+<BR>
+Risultati Esame: 
 
 <ul >
-	<% for( Risultato r : tipologiaCorrente.getRisultati()){ %>	
+	<%if(tipologiaCorrente.getRisultati().size() >0){ 
+	for( Risultato r : tipologiaCorrente.getRisultati()){ %>	
 		<li>${r.nome}</li>			
-	<% 	} %>
+	<% 	}}else{ %>
+	<li>Tipologia Senza Risultati</li>
+	<%} }else{%>
+	<li>Tipologia Corrente Nulla</li>
+	
+	<%} %>
 </ul>
-</li>
+
 
 </ul>
 

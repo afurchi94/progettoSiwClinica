@@ -1,4 +1,4 @@
-package controllerVisualizzaTipologie;
+package controllerMedico;
 
 import model.Medico;
 

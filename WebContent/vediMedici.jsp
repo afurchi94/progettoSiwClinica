@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="model.Clinica"%>
+       <%@ page import="java.util.*"%>
+    <%@ page import="model.Facade"%>
+    <%@ page import="model.Medico"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,10 +12,12 @@
 <body>
 <h2>Quale Medico vuoi controllare?</h2>
 <div>
+
+
 	<form action="controllerMedico" method="get">
 
 					<div class="form-group">
-						<p>${codMedicoError}</p>
+						<p>${erroreMedico}</p>
 						<label>Codice Medico</label><input type="text" class="form-control"
 							placeholder="Codice Medico" name="codMedico"
 							value='${param["codMedico"]}'>
@@ -29,9 +33,16 @@
 <!-- Probabilmente questo lo sostituisco con una Tabella -->
 
 <ul >
-	<% for( int i=0; i<=medici.size(); i++){ %>	
-		<li>${medici[i].codice} - ${medici[i].cognome} - ${medici[i].nome} - ${medici[i].specializzazione} - </li>			
-	<% 	} %>
+	
+				<% Facade facade = new Facade();
+				List<Medico> medici = facade.getMedici();
+				if(medici.size()>0){
+				for(Medico m : medici){ 
+				request.setAttribute("m", m);%>	
+		<li>${m.codice} - ${m.cognome} - ${m.nome} - ${m.specializzazione} </li>			
+		<%}}else{ %>
+			<li>Non ci sono medici nella clinica</li>
+		<% 	} %>
 </ul>
 
 </div>

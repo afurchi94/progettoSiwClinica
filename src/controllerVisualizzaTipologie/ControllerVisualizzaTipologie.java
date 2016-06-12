@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controllerTipologiaEsame.Action;
-import controllerTipologiaEsame.Helper;
+import controllerVisualizzaTipologie.Action;
+import controllerVisualizzaTipologie.Helper;
 
 @WebServlet("/controllerVisualizzaTipologie")
 public class ControllerVisualizzaTipologie  extends HttpServlet {
@@ -20,16 +20,16 @@ public class ControllerVisualizzaTipologie  extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String nextPage = "/dettagliTipologia.jsp";
+		String nextPage = "/consultaTipologieEsame.jsp";
 		Helper helper = new Helper();
 		Action action = new Action();
 
-		if (helper.validate(req, resp)) {
+		if (helper.validate(req, resp)){ 
 			action.execute(req);
+			nextPage = "/dettagliTipologia.jsp";
 		}
-
 		ServletContext application = req.getServletContext();
 		RequestDispatcher dispatcher = application.getRequestDispatcher(nextPage);
 		dispatcher.forward(req,resp);

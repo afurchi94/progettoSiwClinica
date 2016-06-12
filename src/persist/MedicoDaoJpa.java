@@ -29,7 +29,7 @@ public class MedicoDaoJpa implements MedicoDao {
 
 	@Override
 	public Medico find(EntityManager em, Medico medico) {
-		return em.find(medico.getClass(), medico.getId());
+		return em.find(medico.getClass(), medico.getCodice());
 	}
 
 	@Override

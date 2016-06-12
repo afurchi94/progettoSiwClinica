@@ -27,7 +27,7 @@ public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
 
 	@Override
 	public TipologiaEsame find(EntityManager em, TipologiaEsame tipologia) {
-		return em.find(tipologia.getClass(), tipologia);
+		return em.find(tipologia.getClass(), tipologia.getCodice());
 	}
 
 	@Override

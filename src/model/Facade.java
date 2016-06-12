@@ -48,7 +48,17 @@ public class Facade {
 	
 	
 	public void inserisciRisultatiEsame(List<Risultato> risultati){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
+		EntityManager em = emf.createEntityManager();
 		this.esameCorrente.setRisultati(risultati);
+		EntityTransaction tx= em.getTransaction();
+		tx.begin();
+		em.persist(this.esameCorrente);
+		tx.commit();
+		
+		em.close();
+		emf.close();
+	
 	}
 
 	public Medico selezionaMedico(String codice){
@@ -107,10 +117,18 @@ public class Facade {
 
 
 	public void confermaInserimentoEsame(){
-
-
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
+		EntityManager em = emf.createEntityManager();
+		
 		this.esameCorrente.aggiungiPrenotazioneAPaziente();
 
+		EntityTransaction tx= em.getTransaction();
+		tx.begin();
+		em.persist(this.esameCorrente);
+		tx.commit();
+		em.close();
+		emf.close();
 	}
 
 	public TipologiaEsame scegliTipologiaEsame(String codiceTipologia){
@@ -135,11 +153,6 @@ public class Facade {
 		this.clinica.creaPaziente(em, this.pazienteCorrente);
 		em.close();
 		emf.close();
-	}
-
-	public void autenticazioneAmministrazione() {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void inserisciTipologiaEsame(TipologiaEsame tipologia, List<String> risultati, List <String> preRequisiti) {
