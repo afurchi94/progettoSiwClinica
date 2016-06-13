@@ -9,6 +9,7 @@ import javax.ejb.*;
 import persist.*;
 
 import java.util.*;
+import java.sql.Time;
 import java.time.*;
 
 @Stateless(name="facade")
@@ -47,13 +48,15 @@ public class Facade {
 	
 	
 	
-	public void inserisciRisultatiEsame(List<Risultato> risultati){
+	public void inserisciRisultatoEsame(Esame e ,String risultato, int i){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
 		EntityManager em = emf.createEntityManager();
-		this.esameCorrente.setRisultati(risultati);
 		EntityTransaction tx= em.getTransaction();
 		tx.begin();
-		em.persist(this.esameCorrente);
+		em.persist(e);
+		
+		e.getRisultati().get(i).setRisultato(risultato);
+				
 		tx.commit();
 		
 		em.close();
@@ -90,6 +93,8 @@ public class Facade {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
 		EntityManager em = emf.createEntityManager();
 
+		
+		
 		TipologiaEsame t= clinica.cercaTipologia(em,tipo);
 		this.tipologiaCorrente=t;
 		Medico m= clinica.cercaMedico(em,codMedico);
@@ -107,29 +112,21 @@ public class Facade {
 		LocalDate data= java.time.LocalDate.now() ;
 		Date dataP= Date.from(data.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		esame.setDataPrenotazione(dataP);
+		int ora=java.time.LocalDateTime.now().getHour();
+		int minuti=java.time.LocalDateTime.now().getMinute();
+		int secondi= java.time.LocalDateTime.now().getSecond();
+		@SuppressWarnings("deprecation")
+		Time time= new Time(ora,minuti,secondi);
+		esame.setOraPrenotazione(time);
 
 		EsameDaoJpa esameDao = new EsameDaoJpa();
 		esameDao.save(em, esame);
+		esame.aggiungiPrenotazioneAPaziente();
 		this.esameCorrente=esame;
 		em.close();
 		emf.close();
 	}
 
-
-	public void confermaInserimentoEsame(){
-		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
-		EntityManager em = emf.createEntityManager();
-		
-		this.esameCorrente.aggiungiPrenotazioneAPaziente();
-
-		EntityTransaction tx= em.getTransaction();
-		tx.begin();
-		em.persist(this.esameCorrente);
-		tx.commit();
-		em.close();
-		emf.close();
-	}
 
 	public TipologiaEsame scegliTipologiaEsame(String codiceTipologia){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");

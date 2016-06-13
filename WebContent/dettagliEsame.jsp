@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<h1>Esame : ${esame.codice}</h1>
+	<h1>Esame : ${esame.id}</h1>
 
 			<ul >
 				<li>Tipologia: ${esame.tipologia}</li>
@@ -43,8 +43,8 @@ Risultati Esame:
 
 </ul>
 				
-				<a href="/progettoSiwClinica/consultaEsami">	<button type="button">Scegli Altro Esame</button></a>
-				<a href="/progettoSiwClinica/homePage">	<button type="button">Torna alla HomePage</button></a>
+				
+				<a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
 </body>
 
 </html>

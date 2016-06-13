@@ -20,8 +20,13 @@
 			List<Esame> lista=pazienteLogin.getEsamiEffettuati(); 
 			if(lista.size() > 0) {%>
 				<ul >
-				<%for(Esame e: lista){%>
-					<li>Esame: ${e.codice} del ${e.dataEffettuazione} del Paziente ${e.paziente.cognome}</li>				
+				<%for(Esame e: lista){
+				request.setAttribute("e", e);%>
+					<form action="controllerVisualizzaEsami" method="get">
+				<li>
+				<button type="submit" name="idEsame" value='${e.id}'>${e.id}</button> - Svolto in data: ${e.dataEffettuazione}- Tipologia: ${e.tipologia}
+				</li>				
+				</form>				
 				<% }%>
 				</ul>
 			<% }else{%>

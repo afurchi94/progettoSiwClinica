@@ -1,15 +1,15 @@
 package controllerPaziente;
 
-import javax.ejb.EJB;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.apache.commons.validator.routines.DateValidator;
+import java.security.SecureRandom;
+import java.math.BigInteger;
 
 import model.Facade;
 import model.Paziente;
 
-import java.util.*;
+
 
 public class Action {
 
@@ -18,9 +18,12 @@ public class Action {
 	 Facade facade = new Facade();
 	 Paziente paziente=(Paziente) req.getAttribute("paziente");
 	 //Da Modificare, ma lo tengo solo perchè @GeneratedValue da problemi
-	 paziente.setPassword("0");
+	 //Genera una Password RANDOM per ogni nuovo Paziente
+	 SecureRandom random = new SecureRandom();
+	 String password = new BigInteger(130, random).toString(32);
+	 paziente.setPassword(password);
 
-		// metti le date con l'annotazione nella classe Paziente.
+		
 	 facade.inserisciPaziente(paziente);
 	 facade.confermaInserimentoPaziente();
 	 HttpSession session = req.getSession();

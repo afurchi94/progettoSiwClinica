@@ -11,7 +11,8 @@ public class Action {
 
 	public void execute(HttpServletRequest req) {
 		facade = new Facade();
-		Esame esame = facade.scegliEsame(req.getParameter("idEsame"));		
+		String codId = req.getParameter("idEsame");
+		Esame esame = facade.scegliEsame(codId);		
 		req.setAttribute("esame", esame);
 	}
 

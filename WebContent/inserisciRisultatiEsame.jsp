@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.*" %>
+    <%@ page import="model.Esame" %>
+    <%@ page import="model.Risultato" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,25 +29,35 @@
 			
 			<ul>
 			
-			<li>
-			<div class="form-group">
-						<p>${risultatiError}</p>
-						<label>TipoRisultato_1</label><input type="text" class="form-control"
-							placeholder="TipoRisultato_1" name="risultati_1"
-							value='${param["risultati_1"]}'>
-					</div>
-			</li>
-			<li>
-			<div class="form-group">
-						<p>${risultatiError}</p>
-						<label>TipoRisultato_2</label><input type="text" class="form-control"
-							placeholder="TipoRisultato_2" name="risultati_2"
-							value='${param["risultati_2"]}'>
-					</div>
-			</li>
+			
+			
+			<ul >
+	<%Esame esame= (Esame)request.getAttribute("esame");
+	List<String> lista=null;
+	
+	if(esame!=null){
+	List<Risultato> risultati = esame.getRisultati();
+	if(risultati.size() >0){ 
+	for( int i=0; i< risultati.size(); i++){ %>	
+		<p>${risultatoError}</p>
+		<div class="form-group">
+			<li>${risultati[i].nome} : 
+			<input type="text" class="form-control"	placeholder="Valore Risultato" name='<% "risultato".concat(String.valueOf(i)); %>' value='<%request.getAttribute("risultato".concat(String.valueOf(i)));%>>'>
+		</div>
+			
+		
+		
+	<% 	}}else{ %>
+	<li>Esame Senza Risultati</li>
+	<%} }else{%>
+	<li>Esame Nullo</li>
+	
+	<%} %>
+</ul>
+			
 			
 			</ul>
-<button type="submit">Inserisci Risultati</button>
+<button type="button" onclick='alert(Sei sicuro di inserire questi dati? <button type="submit">Inserisci Risultati</button>) <button type="button" onclick>Annulla</button>'>
 
 </form>
 </body>

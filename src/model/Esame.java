@@ -11,7 +11,6 @@ public class Esame {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	String codice;
 	@Temporal(TemporalType.DATE)
 	private Date dataPrenotazione;
 	
@@ -19,12 +18,12 @@ public class Esame {
 	@Temporal(TemporalType.DATE)
 	private Date dataEffettuazione;
 	@OneToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
-	@JoinColumn(name="tipologiaesame_fk")
 	private TipologiaEsame tipologia;
 	@ManyToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
 	@JoinColumn(name="paziente_fk")
 	private Paziente paziente;
-	@OneToMany( fetch = FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	// ho dovuto mettere per forza eager perche con LAZY mi dava problemi
+	@OneToMany( fetch = FetchType.EAGER, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name = "esame_fk")
 	private List<Risultato> risultati;
 	@ManyToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
@@ -41,13 +40,6 @@ public class Esame {
 		this.oraPrenotazione = oraPrenotazione;
 	}
 
-	public String getCodice() {
-		return codice;
-	}
-
-	public void setCodice(String codice) {
-		this.codice = codice;
-	}
 
 	public Long getId() {
 		return id;

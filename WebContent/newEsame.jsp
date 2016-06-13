@@ -22,7 +22,8 @@
 						<select name="tipologia" >
 							<% 
 							List<TipologiaEsame> tipologie= new Facade().getTipologieEsame();//me la devo far passare dalla request o session dalla named query
-							for(TipologiaEsame t: tipologie){ %>
+							for(TipologiaEsame t: tipologie){ 
+							request.setAttribute("t", t);%>
 								<option class="form-control"  value="${t.nome}"> ${t.nome}</option><br>
 							<% 	} %>
 						</select>
@@ -31,8 +32,9 @@
 	<!-- L-inserimento della data ora è un po barbaro, ma dovrebbe funzionare... Se non funziona dobbiamo per forza usare quello del prof-->				
 					<div class="form-group">
 						<p>${dataError}</p>
-						<label>Data</label> <input type="data" class="form-control"
-							placeholder="Data Esame" name="dataEsame" value='${param["dataEsame"]}'>
+						<p>${erroreFormatoData}</p>
+						<label>Da svolgere in Data </label> <input type="data" class="form-control"
+							placeholder="yyyy-mm-dd" name="dataEsame" value='${param["dataEsame"]}'>
 					</div>
 					
 					<div class="form-group">

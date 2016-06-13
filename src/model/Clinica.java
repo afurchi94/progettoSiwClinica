@@ -112,11 +112,12 @@ public class Clinica {
 	}
 	
 	
-	public Esame cercaEsame(EntityManager em, String codiceEsame){
+	public Esame cercaEsame(EntityManager em, String idEsame){
 	
 
 		Esame e= new Esame();
-		e.setCodice(codiceEsame);
+		long id=  Long.valueOf(idEsame);
+		e.setId(id);
 		
 		EsameDaoJpa esameDao = new EsameDaoJpa();
 		Esame esame = esameDao.find(em, e);

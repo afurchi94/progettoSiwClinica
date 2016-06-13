@@ -13,7 +13,8 @@ public class Medico {
 	private String nome;
 	private String cognome;
 	private String specializzazione;
-	@OneToMany(mappedBy="medico", fetch= FetchType.LAZY, cascade=CascadeType.PERSIST)
+	//con fetch Lazy mi da errore
+	@OneToMany(mappedBy="medico", fetch= FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private List<Esame> esami;
              
 	public Medico() {
