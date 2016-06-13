@@ -12,7 +12,7 @@
 <div align="center">
 <h1>Inserisci Qui il Codice dell`Esame che vuoi Aggiornare con i Risultati:</h1>
 
-<form action="controllerEsame" method="get">
+<form action="controllerRisultatiEsame" method="get">
 						<div>
 						<p>${CodiceError}</p>
 						<label>Codice</label> <input type="text" class="form-control"

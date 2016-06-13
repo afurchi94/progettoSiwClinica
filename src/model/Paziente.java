@@ -17,15 +17,13 @@ public class Paziente {
 	private Date dataNascita;
 	
 	// problema del doppio riferimento.
-	@OneToMany(mappedBy="paziente", fetch = FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@OneToMany(mappedBy="paziente", fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private List<Esame> esamiPrenotati;
 	//con fetch lazy mi da errore 
-	@OneToMany(mappedBy="paziente",fetch = FetchType.EAGER, cascade= CascadeType.PERSIST)
-	private List<Esame> esamiEffettuati;
 
 	public Paziente() {
 		this.esamiPrenotati = new LinkedList<>();
-		this.esamiEffettuati = new LinkedList<>();
+		
 	}
 
 
@@ -84,18 +82,6 @@ public class Paziente {
 
 	public void addEsamePrenotato(Esame esame) {
 		this.esamiPrenotati.add(esame);
-	}
-
-	public List<Esame> getEsamiEffettuati() {
-		return esamiEffettuati;
-	}
-
-	public void setEsamiEffettuati(List<Esame> esamiEffettuati) {
-		this.esamiEffettuati = esamiEffettuati;
-	}
-
-	public void addEsameEffettuato(Esame esame) {
-		this.esamiEffettuati.add(esame);
 	}
 
 	

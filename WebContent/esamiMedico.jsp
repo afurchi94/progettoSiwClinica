@@ -13,7 +13,7 @@
 
 <h1>Esami del medico: ${medico.cognome} ${medico.nome}</h1>
 
-(da finire di implementare il link su ogni esame)
+
 <ul >
 	<%Medico medicoCorrente= (Medico)request.getAttribute("medico");
 	if(medicoCorrente!=null){
@@ -23,7 +23,7 @@
 	
 	<form action="controllerVisualizzaEsami" method="get">
 				<li>
-				<button type="submit" name="idEsame" value='${e.id}'>${e.id}</button> - Svolto in data: ${e.dataEffettuazione}- Tipologia: ${e.tipologia}- Paziente: ${e.paziente.cognome}
+				<button type="submit" name="idEsame" value='${e.id}'>${e.id}</button> - Svolto in data: ${e.dataEffettuazione}- Tipologia: ${e.tipologia.nome}- Paziente: ${e.paziente.cognome} - Effettuato:${e.effettuato} 
 				</li>				
 				</form>
 	

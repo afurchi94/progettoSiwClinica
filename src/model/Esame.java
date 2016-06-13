@@ -13,7 +13,7 @@ public class Esame {
 	private Long id;
 	@Temporal(TemporalType.DATE)
 	private Date dataPrenotazione;
-	
+	private String effettuato;
 	private Time oraPrenotazione;
 	@Temporal(TemporalType.DATE)
 	private Date dataEffettuazione;
@@ -30,8 +30,24 @@ public class Esame {
 	private Medico medico;
 
 	
+	public Esame(){
+		this.effettuato="NO";
+	}
 	
 	
+	
+	public String getEffettuato() {
+		return effettuato;
+	}
+
+
+
+	public void setEffettuato(String effettuato) {
+		this.effettuato = effettuato;
+	}
+
+
+
 	public Time getOraPrenotazione() {
 		return oraPrenotazione;
 	}

@@ -54,7 +54,7 @@ public class Facade {
 		EntityTransaction tx= em.getTransaction();
 		tx.begin();
 		em.persist(e);
-		
+		e.setEffettuato("SI");
 		e.getRisultati().get(i).setRisultato(risultato);
 				
 		tx.commit();
@@ -89,13 +89,18 @@ public class Facade {
 
 
 
-	public void inserisciDatiEsame(String tipo, String codFisc, Date dataE, String codMedico ){
+	public void inserisciDatiEsame(String nomeTipo, String codFisc, Date dataE, String codMedico ){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
 		EntityManager em = emf.createEntityManager();
 
+		String codTipo="";
+		for(TipologiaEsame tipologia : this.clinica.getTipologieEsame()){
+			if(tipologia.getNome().equals(nomeTipo) )
+				codTipo = tipologia.getCodice();
+		}
 		
 		
-		TipologiaEsame t= clinica.cercaTipologia(em,tipo);
+		TipologiaEsame t= clinica.cercaTipologia(em,codTipo);
 		this.tipologiaCorrente=t;
 		Medico m= clinica.cercaMedico(em,codMedico);
 		this.medicoCorrente=m;

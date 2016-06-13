@@ -19,7 +19,6 @@ public class Action {
 		String codMedico= req.getParameter("codMedico");
 		String pattern = "yyyy-MM-dd";
 		DateValidator validator = new DateValidator();
-		
 		Date data = validator.validate(dataEsame, pattern);
 		
 		facade= new Facade();
