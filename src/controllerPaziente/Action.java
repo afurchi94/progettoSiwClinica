@@ -20,12 +20,11 @@ public class Action {
 	 //Da Modificare, ma lo tengo solo perchè @GeneratedValue da problemi
 	 //Genera una Password RANDOM per ogni nuovo Paziente
 	 SecureRandom random = new SecureRandom();
-	 String password = new BigInteger(130, random).toString(32);
+	 String password = new BigInteger(130, random).toString(32).substring(0, 8);
 	 paziente.setPassword(password);
 
 		
 	 facade.inserisciPaziente(paziente);
-	 facade.confermaInserimentoPaziente();
 	 HttpSession session = req.getSession();
 	 session.setAttribute("paziente", paziente);
 	}

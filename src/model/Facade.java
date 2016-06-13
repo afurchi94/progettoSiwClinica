@@ -147,15 +147,14 @@ public class Facade {
 
 	public void inserisciPaziente(Paziente paziente) {
 		this.pazienteCorrente=paziente;
-	}
-
-	public void confermaInserimentoPaziente(){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
 		EntityManager em = emf.createEntityManager();
-		this.clinica.creaPaziente(em, this.pazienteCorrente);
+		this.clinica.creaPaziente(em, paziente);
 		em.close();
 		emf.close();
 	}
+
+
 
 	public void inserisciTipologiaEsame(TipologiaEsame tipologia, List<String> risultati, List <String> preRequisiti) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");

@@ -11,15 +11,15 @@
 </head>
 <body>
 
-	<h1>Esame : ${esameCorrente.codice}</h1>
+	<h1>Esame : ${esame.codice}</h1>
 
 			<ul >
-				<li>Tipologia: ${esameCorrente.tipologia}</li>
-				<li>Paziente: : ${paziente.cognome} ${paziente.nome}</li>
-				<li>Codice Fiscale: ${paziente.codFiscale}</li>
-				<li>Data Esame: ${esameCorrente.dataEsame}</li>
-				<li>Data Prenotazione: ${esameCorrente.dataPrenotazione} ${esameCorrente.oraPrenotazione}</li>
-				<li>Medico: ${medico.cognome} ${medico.nome}</li>
+				<li>Tipologia: ${esame.tipologia}</li>
+				<li>Paziente: : ${esame.paziente.cognome} ${esame.paziente.nome}</li>
+				<li>Codice Fiscale: ${esame.paziente.codiceFiscale}</li>
+				<li>Data Esame: ${esame.dataEsame}</li>
+				<li>Data Prenotazione: ${esame.dataPrenotazione} alle  ${esame.oraPrenotazione}</li>
+				<li>Medico: ${esame.medico.cognome} ${esame.medico.nome}</li>
 			</ul>
 			
 			<h2>Inserisci qui i Risultati dell`esame:</h2>

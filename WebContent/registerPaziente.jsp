@@ -10,47 +10,34 @@
 <body>
 	<form action="controllerPaziente" method="post">
 		<p>
-			<%
-				if (request.getAttribute("erroreNome") != null)
-					out.print(request.getAttribute("erroreNome"));
-			%>
+			${erroreNome}
 		</p>
 		<p>
 			Nome <input type="text" name="nome" placeholder="Nome"
-				value="<%if (request.getParameter("nome") != null)
-				out.print(request.getParameter("nome"));%>" />
+				value='${param["nome"]}' />
 
 		</p>
 		<p>
-			<%
-				if (request.getAttribute("erroreCognome") != null)
-					out.print(request.getAttribute("erroreCognome"));
-			%>
+		${erroreCognome}
 		</p>
 		<p>
 			Cognome <input type="text" name="cognome" placeholder="Cognome"
-				value="<%if (request.getParameter("cognome") != null)
-				out.print(request.getParameter("cognome"));%>" />
+				value='${param["cognome"]}' />
 
 		</p>
-		<p>'${erroreCodiceFiscale}'</p>
+		<p>${erroreCodiceFiscale}</p>
 		<p>
 		Codice Fiscale <input type="text" name="codiceFiscale" placeholder="Cod Fiscale"
 				value='${param["codiceFiscale"]}' />
 		</p>
 		
-		<p>
-			<%
-				if (request.getAttribute("erroreDataNascita") != null)
-					out.print(request.getAttribute("erroreDataNascita"));
-			if (request.getAttribute("erroreFormatoData") != null)
-				out.print(request.getAttribute("erroreFormatoData"));
-			%>
-		</p>
+			<p>
+			${erroreFormatoData}
+			${erroredataNascita}
+			</p>
 		<p>
 			Data di Nascita: <input type="text" name="dataNascita" placeholder="yyyy-mm-dd"
-				value="<%if (request.getParameter("dataNascita") != null)
-				out.print(request.getParameter("dataNascita"));%>" />
+				value='${param["dataNascita"]}' />
 
 		</p>
 		<input type="submit" name="submit" value="Registra Paziente" />

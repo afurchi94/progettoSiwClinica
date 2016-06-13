@@ -13,8 +13,8 @@
 <br>
 <center> <h2>Scegli l'operazione vuoi effettuare:</h2></center>
 			<div >	<a href="/progettoSiwClinica/consultaEsami.jsp"><h1>Consulta gli Esami Sostenuti</h1></a>	</div>
-
-
+<br><br><br>
+<a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
 </body>
 
 </html>

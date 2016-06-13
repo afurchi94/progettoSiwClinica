@@ -31,9 +31,6 @@ public class ControllerPaziente extends HttpServlet {
 		Helper helper = new Helper();
 		Action action = new Action();
 
-		if (helper.validate(req, resp)) {
-			action.esegui(req);
-		}
 
 		if (helper.validate(req, resp)) {
 			action.esegui(req);

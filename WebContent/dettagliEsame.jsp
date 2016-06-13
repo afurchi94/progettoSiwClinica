@@ -17,7 +17,7 @@
 			<ul >
 				<li>Tipologia: ${esame.tipologia.nome}</li>
 				<li>Paziente: : ${esame.paziente.cognome} ${esame.paziente.nome}</li>
-				<li>Codice Fiscale: ${paziente.codFiscale}</li>
+				<li>Codice Fiscale: ${paziente.codiceFiscale}</li>
 				<li>Data Esame: ${esame.dataEffettuazione}</li>
 				<li>Data Prenotazione: ${esame.dataPrenotazione} alle: ${esame.oraPrenotazione}</li>
 				<li>Medico: ${esame.medico.cognome} ${esame.medico.nome}</li>

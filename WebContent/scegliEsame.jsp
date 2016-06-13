@@ -14,10 +14,11 @@
 
 <form action="controllerRisultatiEsame" method="get">
 						<div>
-						<p>${CodiceError}</p>
-						<label>Codice</label> <input type="text" class="form-control"
-							placeholder="Codice Esame" name="codice"
-							value='${param["codice"]}'>
+						<p>${vuotoIdEsame}</p>
+						<p>${erroreIdEsame}</p>
+						<label>Codice Esame</label> <input type="text" class="form-control"
+							placeholder="Codice Esame" name="idCodice"
+							value='${param["idCodice"]}'>
 					</div>
 						<button type="submit" class="btn btn-default">Cerca</button>
 </form>
