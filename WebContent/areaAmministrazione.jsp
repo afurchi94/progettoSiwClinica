@@ -21,18 +21,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Area Amministrazione</title>
 </head>
 <body>
 
 <%if(session.getAttribute("amministratoreLogin")!=null){ %>
-<div align="center"> Sei Autenticato come: ${amministratoreLogin.username} Ruolo: Amministratore </div><br>
-<div align="center"> <a href="/progettoSiwClinica/homePage.jsp"><button type="button" onclick='<% session.removeAttribute("amministratoreLogin");%>'>LogOut</button></a> </div>
+<center><table>
+<tr><td> Sei Autenticato come: <strong>${amministratoreLogin.username}</strong></td></tr><tr><td> Ruolo:<strong> Amministratore</strong></td></tr>
+<tr><td> <a align="center" href="/progettoSiwClinica/homePage.jsp"><button type="button" onclick='<% session.removeAttribute("amministratoreLogin");%>'>LogOut</button></a> </td></tr>
+</table></center>
 <%}%>
 
 <center> <h1>Area Amministrazione</h1></center>
-<br>
-<center> <h2>Scegli l'operazione vuoi effettuare</h2></center>
+
+<center> Scegli l'operazione vuoi effettuare
 			<div >	<a href="/progettoSiwClinica/newEsame.jsp"><h1>Crea Nuovo Esame</h1></a>	</div>
 			<br>
 			<div >	<a href="/progettoSiwClinica/newTipologia.jsp"><h1>Crea Nuova Tipologia di Esame</h1></a></div>
@@ -45,6 +49,7 @@
 
 <br><br>
 <a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+</center>
 </body>
 
 </html>

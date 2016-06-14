@@ -9,6 +9,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Inserisci Risultati Esame</title>
 </head>
 <body>
@@ -33,7 +35,7 @@
 			
 			
 			
-			<ul >
+			
 			<p>${risultatoError}</p>
 	<%Esame esame= (Esame)request.getAttribute("esame");
 	List<String> lista=null;
@@ -61,8 +63,8 @@
 </ul>
 			
 			
-			</ul>
-<button type="submit">Conferma Effettuazione Esame</button>'>
+			
+<button type="submit" class="btn btn-primary btn-lg btn-block">Conferma Effettuazione Esame</button>'>
 
 </form>
 </body>

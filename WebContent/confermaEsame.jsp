@@ -7,13 +7,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Conferma Creazione Esame</title>
 </head>
 <body>
 <div>
-	 	<form action="controllerConfermaEsame" method="get">  
+	 	<form  class="form-inline" action="controllerConfermaEsame" method="get">  
 			<center><h1> Vuoi modificare i dati da te inseriti prima di andare avanti?:</h1></center>
-			<p>
+			<center><p>
 			<ul>
 				<p>${tipologiaError}</p>
 				<li>Tipologia: <select name="tipologia" >
@@ -44,10 +46,11 @@
 					</div></li>
 			</ul>
 			</p>
+			</center>
 			<div align="center">
 			<h1>Desideri procedere con la creazione dell`Esame?</h1>
-			<button type="submit"  onclick="alert('Esame Creato con Successo')">Conferma Creazione Esame</button>
-			<a href="/progettoSiwClinica/newEsame.jsp">	<button type="button">Torna Indietro</button></a>
+			<button type="submit" class="btn btn-primary btn-lg btn-block" onclick="alert('Esame Creato con Successo')">Conferma Creazione Esame</button>
+			<a href="/progettoSiwClinica/newEsame.jsp">	<button class="btn btn-default btn-lg btn-block" type="button">Torna Indietro</button></a>
 	 	</form> 
 		</div>
 		</div>

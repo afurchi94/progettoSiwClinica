@@ -20,21 +20,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Area Paziente</title>
 </head>
 <body>
-<%if(session.getAttribute("amministratoreLogin")!=null){ %>
-<div align="center"> Sei Autenticato come: ${pazienteLogin.username} Ruolo: Paziente </div><br>
-<div align="center"> <a href="/progettoSiwClinica/homePage.jsp"><button type="button" onclick='<% session.removeAttribute("pazienteLogin");%>'>LogOut</button></a> </div>
+<%if(session.getAttribute("pazienteLogin")!=null){ %>
+<table>
+<tr><td> Sei Autenticato come: <strong>${pazienteLogin.username}</strong></td><tr><td> Ruolo: <strong>Paziente</strong></td></tr>
+<tr><td><div align="center"> <a href="/progettoSiwClinica/homePage.jsp"><button type="button" onclick='<% session.removeAttribute("pazienteLogin");%>'>LogOut</button></a> </div></td></tr>
+</table>
 <%}%>
 
 
 <center> <h1>Area Paziente</h1></center>
 <br>
-<center> <h2>Scegli l'operazione vuoi effettuare:</h2></center>
+<center> Scegli l'operazione vuoi effettuare:
 			<div >	<a href="/progettoSiwClinica/consultaEsami.jsp"><h1>Consulta gli Esami Sostenuti</h1></a>	</div>
 <br><br><br>
 <a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+</center>
 </body>
 
 </html>

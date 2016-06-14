@@ -7,6 +7,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Inserisci Risultati Esame</title>
 </head>
 <body>
@@ -15,8 +17,8 @@
 <div align="center">
 <h1>Inserisci Qui il Codice dell`Esame che vuoi Aggiornare con i Risultati:</h1>
 
-<form action="controllerRisultatiEsame" method="get">
-						<div>
+<form  class="form-inline" action="controllerRisultatiEsame" method="get">
+						<div class="form-group">
 						<p>${vuotoIdEsame}</p>
 						<p>${erroreIdEsame}</p>
 						<label>Codice Esame</label> <input type="text" class="form-control"

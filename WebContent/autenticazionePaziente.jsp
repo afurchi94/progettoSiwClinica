@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Autenticazione Paziente</title>
 </head>
 <body>
 
 
 	<div>
-		<h2>Inserimento Dati Paziente</h2>
+		<center><h2>Inserimento Dati Paziente</h2></center>
 		<div class="col-md-4 col-md-offset-4">
 
 			<div class="form_container">
@@ -31,7 +33,7 @@
 						<label>Password</label> <input type="password"
 							class="form-control" placeholder="Password" name="password">
 					</div>
-					<button type="submit" class="btn btn-default">Accedi</button>
+					<button type="submit" class="btn btn-warning">Accedi</button>
 				</form>
 			</div>
 		</div>

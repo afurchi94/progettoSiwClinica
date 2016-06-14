@@ -9,15 +9,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Visualizza Medici</title>
 </head>
 <body>
-<h2>Quale Medico vuoi controllare?</h2>
+<center><h2>Inserisci il codice del medico che vuoi controllare</h2>
 <div>
 
 
-	<form action="controllerMedico" method="get">
-
+	<form class="form-inline" action="controllerMedico" method="get">
 					<div class="form-group">
 						<p>${erroreMedico}</p>
 						<label>Codice Medico</label><input type="text" class="form-control"
@@ -25,9 +26,10 @@
 							value='${param["codMedico"]}'>
 					</div>
 
-					<button type="submit">Cerca</button>
+					<button class="btn btn-info" type="submit">Cerca</button>
+ 	</div>
   </form>
-</div>
+
 <br><br>
 <div>
 <h1>Elenco Medici della Clinica</h1>
@@ -49,7 +51,7 @@
 
 </div>
 
-
+</center>
 </body>
 
 </html>

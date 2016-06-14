@@ -8,12 +8,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Esami Medico</title>
 </head>
 <body>
 
 
-<h1>Esami del medico: ${medico.cognome} ${medico.nome}</h1>
+<center><h1>Esami del medico: ${medico.cognome} ${medico.nome}</h1></center>
 
 
 <ul >
@@ -25,7 +27,7 @@
 	
 	<form action="controllerVisualizzaEsami" method="get">
 				<li>
-				<button type="submit" name="idEsame" value='${e.id}'>${e.id}</button> - Svolto in data: ${e.dataEffettuazione}- Tipologia: ${e.tipologia.nome}- Paziente: ${e.paziente.cognome} - Effettuato:${e.effettuato} 
+				<button class="btn btn-success"type="submit" name="idEsame" value='${e.id}'>${e.id}</button>  <strong>Svolto in data:</strong> ${e.dataEffettuazione} - <strong>Tipologia:</strong> ${e.tipologia.nome} - <strong>Paziente:</strong> ${e.paziente.cognome} - <strong>Effettuato:</strong> ${e.effettuato} 
 				</li>				
 				</form>
 	
@@ -35,9 +37,10 @@
 	<%} }%>
 </ul>
 
-
-<a href="/progettoSiwClinica/vediMedici.jsp">	<button type="button">Cerca altro Medico</button></a>
-<a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+<center>
+<a class="btn btn-primary"href="/progettoSiwClinica/vediMedici.jsp">	<button type="button">Cerca altro Medico</button></a>
+<a class="btn btn-primary"href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+</center>
 </body>
 
 </html>

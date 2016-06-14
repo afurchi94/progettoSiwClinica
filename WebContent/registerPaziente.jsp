@@ -7,10 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="controllerPaziente" method="post">
+	<form  class="form-inline" action="controllerPaziente" method="post">
+	<div  class="form-group>">
 		<p>
 			${erroreNome}
 		</p>
@@ -42,10 +45,10 @@
 				value='${param["dataNascita"]}' />
 
 		</p>
-		<input type="submit" name="submit" value="Registra Paziente" />
+		<input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Registra Paziente" />
 		</p>
 		${erroreInserimento}
-		
+		</div>
 	</form>
 </body>
 </html>

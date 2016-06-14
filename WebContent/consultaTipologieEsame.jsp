@@ -7,11 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Consulta Tipologie di Esame</title>
 </head>
 <body>
-	<h1>Tipologie di Esame offerte dalla Clinica:</h1>
-			clicca su una tipologia per vederne i dettagli(piu avanti implemento anche il link su ogni tipologia stampata)
+	<center><h1>Tipologie di Esame offerte dalla Clinica:</h1>
+			clicca sul codice di una Tipologia per vederne i dettagli </center>
 			<ul>
 			
 				<% Facade facade = new Facade();
@@ -21,7 +23,7 @@
 				request.setAttribute("t", t);%>
 				<form action="controllerVisualizzaTipologie" method="get">
 				<li>
-				<button type="submit" name="codTipologia" value='${t.codice}'>${t.codice}</button> -${t.nome} - ${t.costo} - ${t.descrizione}
+				<button class="btn btn-success" type="submit" name="codTipologia" value='${t.codice}'>${t.codice}</button>  <strong>Nome:</strong> ${t.nome} - <strong>Costo</strong> ${t.costo} Euro - <strong>Descrizione:</strong> ${t.descrizione}
 				</li>			
 				</form>
 			<% 	}}else{ %>

@@ -4,23 +4,25 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 		<title>HomePage Clinica</title>
 	</head>
 	
 	<body>
 	
 		<center> <h1>Clinica Cherubini-Furchì</h1></center>
+		<center><h3>Home Page</h3></center>
 		<br><br>
 		
 		<div class="zona_superione" style="font-size:160%;" align="center">
 	
-				<a href="/progettoSiwClinica/consultaTipologieEsame.jsp"><button  >Esami Offerti Dalla Clinica</button></a>
-				<a href="/progettoSiwClinica/areaPaziente.jsp"><button>Area Paziente</button></a>
-				<a href="/progettoSiwClinica/areaAmministrazione.jsp" ><button >Area Amministrazione</button></a>
+				<a href="/progettoSiwClinica/consultaTipologieEsame.jsp"><button type="button" class="btn btn-primary btn-lg" >Esami Offerti Dalla Clinica</button></a>
+				<a href="/progettoSiwClinica/areaPaziente.jsp"><button type="button" class="btn btn-primary btn-lg">Area Paziente</button></a>
+				<a href="/progettoSiwClinica/areaAmministrazione.jsp" ><button type="button" class="btn btn-primary btn-lg">Area Amministrazione</button></a>
 	
 		</div>
-		<br><br><br>
-		<hr><hr>
+	<hr>
 		<div>
 		
 		<h1>Immagini a caso</h1>

@@ -9,14 +9,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Consulta Esami</title>
 </head>
 <body>
 
 
-	<h1>Esami Sostenuti dal paziente ${pazienteLogin.nome} :</h1>
+	<center><h1>Esami del paziente ${pazienteLogin.cognome} ${pazienteLogin.nome} :</h1>
 	
-			clicca su di un esame per vederne i dettagli
+			clicca sul codice di un esame per vederne i dettagli</center>
 			
 			<%Paziente pazienteLogin= (Paziente)session.getAttribute("pazienteLogin");
 			List<Esame> lista=pazienteLogin.getEsamiPrenotati(); 
@@ -26,7 +28,7 @@
 				request.setAttribute("e", e);%>
 					<form action="controllerVisualizzaEsami" method="get">
 				<li>
-				<button type="submit" name="idEsame" value='${e.id}'>${e.id}</button> - Svolto in data: ${e.dataEffettuazione}- Tipologia: ${e.tipologia.nome} - Effettuato:${e.effettuato} 
+				<button type="submit" class="btn btn-success" name="idEsame" value='${e.id}'>${e.id}</button>  <strong>Svolto in data:</strong> ${e.dataEffettuazione} - <strong>Tipologia:</strong> ${e.tipologia.nome} - <strong>Effettuato:</strong> ${e.effettuato} 
 				</li>				
 				</form>				
 				<% }%>

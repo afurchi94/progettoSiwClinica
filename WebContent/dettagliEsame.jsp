@@ -9,30 +9,33 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 <title>Dettagli Esame</title>
 </head>
 <body>
-
+<center>
 	<h1>Esame : ${esame.id}</h1>
 
 			<ul >
-				<li>Tipologia: ${esame.tipologia.nome}</li>
-				<li>Paziente: : ${esame.paziente.cognome} ${esame.paziente.nome}</li>
-				<li>Codice Fiscale: ${paziente.codiceFiscale}</li>
-				<li>Data Esame: ${esame.dataEffettuazione}</li>
-				<li>Data Prenotazione: ${esame.dataPrenotazione} alle: ${esame.oraPrenotazione}</li>
-				<li>Medico: ${esame.medico.cognome} ${esame.medico.nome}</li>
-			<li>Effettuato: ${esame.effettuato}</li>
+				<li><strong>Tipologia:</strong> ${esame.tipologia.nome}</li>
+				<li><strong>Paziente:</strong>  ${esame.paziente.cognome} ${esame.paziente.nome}</li>
+				<li><strong>Codice Fiscale:</strong> ${paziente.codiceFiscale}</li>
+				<li><strong>Data Esame:</strong> ${esame.dataEffettuazione}</li>
+				<li><strong>Data Prenotazione:</strong> ${esame.dataPrenotazione} alle: ${esame.oraPrenotazione}</li>
+				<li><strong>Medico:</strong> ${esame.medico.cognome} ${esame.medico.nome}</li>
+			<li><strong>Effettuato:</strong> ${esame.effettuato}</li>
 			</ul>
 	
 <BR>
-Risultati Esame: 
+<strong>Risultati Esame:<strong></strong> 
 
 <ul >
 	<%Esame esame= (Esame)request.getAttribute("esame");
 	if(esame!=null){
 	if(esame.getRisultati().size() >0){ 
-	for( Risultato r : esame.getRisultati()){ %>	
+	for( Risultato r : esame.getRisultati()){ 
+	request.setAttribute("r", r);%>	
 		<li>${r.nome} : ${r.risultato}</li>			
 	<% 	}}else{ %>
 	<li>Esame Senza Risultati</li>
@@ -46,7 +49,8 @@ Risultati Esame:
 </ul>
 				
 				
-				<a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+				<a href="/progettoSiwClinica/homePage.jsp">	<button class="btn btn-primary" type="button">Torna alla HomePage</button></a>
+</center>
 </body>
 
 </html>
