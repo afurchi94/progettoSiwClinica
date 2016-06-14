@@ -114,6 +114,18 @@ public class Facade {
 		esame.setPaziente(p);
 		esame.setMedico(m);
 		esame.setTipologia(t);
+		
+		//creo la lista dei risultati per l'esame basandoci su quelli della tipologia scelta
+		List<Risultato> risultati = new LinkedList<Risultato>();
+		for(Risultato r: t.getRisultati()){
+			Risultato ris=new Risultato();
+			ris.setNome(r.getNome());
+			RisultatoDaoJpa risultatoDao = new RisultatoDaoJpa();
+			risultatoDao.save(em, ris);
+			risultati.add(ris);
+		}
+		esame.setRisultati(risultati);
+		
 		LocalDate data= java.time.LocalDate.now() ;
 		Date dataP= Date.from(data.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		esame.setDataPrenotazione(dataP);
@@ -159,26 +171,31 @@ public class Facade {
 	public void inserisciTipologiaEsame(TipologiaEsame tipologia, List<String> risultati, List <String> preRequisiti) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
 		EntityManager em = emf.createEntityManager();
-
+		//EntityTransaction tx= em.getTransaction();
+		//tx.begin();
+		
 		// ricerca prerequisito tramite nome
-		List<Prerequisito> listReq=null;
+		List<Prerequisito> listReq=  new LinkedList<Prerequisito>();
 		for(String s: preRequisiti){
 			Prerequisito p=new Prerequisito();
 			p.setNome(s);
 			PrerequisitoDaoJpa pDaoJpa= new PrerequisitoDaoJpa();
 			Prerequisito preRequisito= pDaoJpa.find(em, p);
+			if(!listReq.contains(preRequisito))
 			listReq.add(preRequisito);
 		}
 
 		// salvataggio del risultato nel database.
 
 
-		List<Risultato> listRis=null;
+		List<Risultato> listRis=  new LinkedList<Risultato>();
 		for(String s : risultati){
 			Risultato r=new Risultato();
 			r.setNome(s);
 			RisultatoDaoJpa risultatoDao = new RisultatoDaoJpa();
 			risultatoDao.save(em, r);
+			
+			if(!listRis.contains(r))
 			listRis.add(r);
 		}
 
@@ -189,7 +206,8 @@ public class Facade {
 		// inserimento tipologia esame
 
 		this.clinica.creaTipologia(em, tipologia);
-
+		
+		//tx.commit();
 		em.close();
 		emf.close();
 	}
@@ -231,6 +249,26 @@ public class Facade {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
 		EntityManager em = emf.createEntityManager();
 
+		TipologiaEsame tipologia = new TipologiaEsame();
+		tipologia.setCodice("1100");
+		tipologia.setNome("TAC nuova più bella");
+		tipologia.setDescrizione("Ti fanno una normale TAC");
+		tipologia.setCosto(99.90);
+		
+		List<String> preRequisiti= new LinkedList<String>();
+		List<String> risultati= new LinkedList<String>();
+		preRequisiti.add("maggiorenne");
+		preRequisiti.add("incinta");
+		
+		risultati.add("emorragie");
+		risultati.add("ischemie");
+		risultati.add("tumori");
+		
+		
+		Facade facade = new Facade();
+		facade.inserisciTipologiaEsame(tipologia, risultati, preRequisiti);
+		
+		
 		em.close();
 		emf.close();
 	}

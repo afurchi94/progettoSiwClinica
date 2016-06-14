@@ -21,26 +21,30 @@
 <ul >
 	<%TipologiaEsame tipologiaCorrente= (TipologiaEsame)request.getAttribute("tipologia");
 	if(tipologiaCorrente!=null){
-	if(tipologiaCorrente.getPrerequisiti().size() >0){
-	for( Prerequisito p : tipologiaCorrente.getPrerequisiti()){ %>	
-		<li>${p.nome}</li>
-		<li>${p.descrizione}</li>			
-	<% 	}}else{ %>
-	<li>Tipologia Senza Prerequisiti</li>
-	<%} %>
+		if(tipologiaCorrente.getPrerequisiti().size() >0){
+			for( Prerequisito p : tipologiaCorrente.getPrerequisiti()){ 
+				request.setAttribute("p", p);
+	%>	
+				<li><strong>${p.nome}</strong> : ${p.descrizione}</li>
+	<% 		}
+		}else{ %>
+			<li>Tipologia Senza Prerequisiti</li>
+		<%} %>
 </ul>
 <BR>
-Risultati Esame: 
+		Risultati Esame: 
 
-<ul >
-	<%if(tipologiaCorrente.getRisultati().size() >0){ 
-	for( Risultato r : tipologiaCorrente.getRisultati()){ %>	
-		<li>${r.nome}</li>			
-	<% 	}}else{ %>
-	<li>Tipologia Senza Risultati</li>
-	<%} }else{%>
-	<li>Tipologia Corrente Nulla</li>
-	
+	<ul >
+		<%if(tipologiaCorrente.getRisultati().size() >0){ 
+			for( Risultato r : tipologiaCorrente.getRisultati()){ 
+				request.setAttribute("r", r);%>	
+				<li>${r.nome}</li>		
+		<% 	}
+		  }else{ %>
+			<li>Tipologia Senza Risultati</li>
+		<%} 
+	}else{%>
+		<li>Tipologia Corrente Nulla</li>
 	<%} %>
 </ul>
 

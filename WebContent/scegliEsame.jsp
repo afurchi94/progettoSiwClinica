@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,8 +20,8 @@
 						<p>${vuotoIdEsame}</p>
 						<p>${erroreIdEsame}</p>
 						<label>Codice Esame</label> <input type="text" class="form-control"
-							placeholder="Codice Esame" name="idCodice"
-							value='${param["idCodice"]}'>
+							placeholder="Codice Esame" name="idEsame"
+							value='${param["idEsame"]}'>
 					</div>
 						<button type="submit" class="btn btn-default">Cerca</button>
 </form>

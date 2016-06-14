@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import ="javax.servlet.http.HttpSession"%>
+<%@ page import ="javax.servlet.http.*"%>
   <%@ page import ="model.Amministratore" %>
-<% Amministratore a = (Amministratore)session.getAttribute("amministratoreLogin");
+<% 	
+	HttpSession s = request.getSession();
+	Amministratore a = (Amministratore)s.getAttribute("amministratoreLogin");
    boolean autorizzato = true;
    if (a!=null)
 	   autorizzato=true;
@@ -25,7 +27,7 @@
 
 <%if(session.getAttribute("amministratoreLogin")!=null){ %>
 <div align="center"> Sei Autenticato come: ${amministratoreLogin.username} Ruolo: Amministratore </div><br>
-<div align="center"> <a href="/progettoSiwClinica/homePage.jsp"><button type="button" onclick='<% session.setAttribute("amministratoreLogin",null);%>'>LogOut</button></a> </div>
+<div align="center"> <a href="/progettoSiwClinica/homePage.jsp"><button type="button" onclick='<% session.removeAttribute("amministratoreLogin");%>'>LogOut</button></a> </div>
 <%}%>
 
 <center> <h1>Area Amministrazione</h1></center>

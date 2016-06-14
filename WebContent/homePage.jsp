@@ -12,10 +12,12 @@
 		<center> <h1>Clinica Cherubini-Furchì</h1></center>
 		<br><br>
 		
-		<div class="zona_superione">
-			<div align="left" style="font-size:160%;">	<a href="/progettoSiwClinica/consultaTipologieEsame.jsp">Esami Offerti Dalla Clinica</a>	</div>
-			<div align="center" style="font-size:160%;" >	<a href="/progettoSiwClinica/autenticazionePaziente.jsp">Autenticazione Paziente</a></div>
-			<div align="right" style="font-size:160%;">	<a href="/progettoSiwClinica/autenticazioneAmministrazione.jsp">Autenticazione Amministrazione</a></div>
+		<div class="zona_superione" style="font-size:160%;" align="center">
+	
+				<a href="/progettoSiwClinica/consultaTipologieEsame.jsp"><button  >Esami Offerti Dalla Clinica</button></a>
+				<a href="/progettoSiwClinica/areaPaziente.jsp"><button>Area Paziente</button></a>
+				<a href="/progettoSiwClinica/areaAmministrazione.jsp" ><button >Area Amministrazione</button></a>
+	
 		</div>
 		<br><br><br>
 		<hr><hr>

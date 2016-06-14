@@ -14,6 +14,7 @@ public class Action {
 		Paziente paziente = facade.loginPaziente(codiceFiscale, password);
 		if (paziente != null) {
 			HttpSession session = req.getSession();
+			
 			session.setAttribute("pazienteLogin", paziente);
 			return "OK";
 		} else{

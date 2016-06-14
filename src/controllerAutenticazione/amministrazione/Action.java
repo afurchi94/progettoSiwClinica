@@ -13,7 +13,9 @@ public class Action {
 		String password = req.getParameter("password");
 		Amministratore amministratore = facade.loginAmministrazione(username, password);
 		if (amministratore != null) {
+		
 			HttpSession session = req.getSession();
+			
 			session.setAttribute("amministratoreLogin", amministratore);
 			return "OK";
 		} else{
