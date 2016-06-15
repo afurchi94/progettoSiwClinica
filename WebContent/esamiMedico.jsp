@@ -38,8 +38,8 @@
 </ul>
 
 <center>
-<a class="btn btn-primary"href="/progettoSiwClinica/vediMedici.jsp">	<button type="button">Cerca altro Medico</button></a>
-<a class="btn btn-primary"href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+<a href="/progettoSiwClinica/vediMedici.jsp">	<button class="btn btn-primary"type="button">Cerca altro Medico</button></a>
+<a href="/progettoSiwClinica/homePage.jsp">	<button class="btn btn-primary"type="button">Torna alla HomePage</button></a>
 </center>
 </body>
 

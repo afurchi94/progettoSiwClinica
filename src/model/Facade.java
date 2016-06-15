@@ -255,32 +255,4 @@ public class Facade {
 		return null;
 	}
 
-
-	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
-		EntityManager em = emf.createEntityManager();
-
-		TipologiaEsame tipologia = new TipologiaEsame();
-		tipologia.setCodice("001");
-		tipologia.setNome("TAC");
-		tipologia.setDescrizione("Ti fanno una normale TAC");
-		tipologia.setCosto(99.90);
-		
-		List<String> preRequisiti= new LinkedList<String>();
-		List<String> risultati= new LinkedList<String>();
-		preRequisiti.add("maggiorenne");
-		preRequisiti.add("incinta");
-		
-		risultati.add("emorragie");
-		risultati.add("ischemie");
-		risultati.add("tumori");
-		
-		
-		Facade facade = new Facade();
-		facade.inserisciTipologiaEsame(tipologia, risultati, preRequisiti);
-		
-	
-		em.close();
-		emf.close();
-	}
 }

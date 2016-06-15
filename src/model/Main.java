@@ -14,10 +14,6 @@ public class Main {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinicaAcme-unit");
 		EntityManager em = emf.createEntityManager();
 		
-
-		MedicoDaoJpa medicoDao = new MedicoDaoJpa();
-		
-		System.out.println(medicoDao.findAll(em));
 		em.close();
 		emf.close();
 	}
