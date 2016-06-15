@@ -12,10 +12,10 @@ public class TipologiaEsame {
 	private String nome;
 	private String descrizione;
 	private double costo;
-	@OneToMany( fetch = FetchType.EAGER)
+	@OneToMany( fetch = FetchType.EAGER, cascade= CascadeType.PERSIST)
 	@JoinColumn(name = "tipologiaEsame_fk")
 	private List<Prerequisito> prerequisiti;
-	@OneToMany( fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
+	@OneToMany( fetch = FetchType.EAGER, cascade={CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name = "tipologiaEsame_fk")
 	private List<Risultato> risultati;
 

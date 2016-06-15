@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center><h1>Inserisci i Dati del Nuovo Paziente</h1>
 	<form  class="form-inline" action="controllerPaziente" method="post">
 	<div  class="form-group>">
 		<p>
@@ -45,10 +46,12 @@
 				value='${param["dataNascita"]}' />
 
 		</p>
+		
 		<input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Registra Paziente" />
 		</p>
 		${erroreInserimento}
 		</div>
 	</form>
+	</center>
 </body>
 </html>

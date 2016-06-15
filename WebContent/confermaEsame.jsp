@@ -18,12 +18,12 @@
 			<center><p>
 			<ul>
 				<p>${tipologiaError}</p>
-				<li>Tipologia: <select name="tipologia" >
+				<li>Tipologia: <select class = "form-control" name="tipologia" >
 							<% 
 							List<TipologiaEsame> tipologie= new Facade().getTipologieEsame();//me la devo far passare dalla request o session dalla named query
 							for(TipologiaEsame t: tipologie){ 
 							request.setAttribute("t", t);%>
-								<option class="form-control"  value="${t.nome}"> ${t.nome}</option><br>
+								<option value="${t.nome}"> ${t.nome}</option><br>
 							<% 	} %>
 						</select></li>
 				<p>${dataError}</p><p>${erroreFormatoData}</p>

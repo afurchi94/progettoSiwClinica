@@ -26,19 +26,21 @@
 </head>
 <body>
 <%if(session.getAttribute("pazienteLogin")!=null){ %>
-<table>
-<tr><td> Sei Autenticato come: <strong>${pazienteLogin.username}</strong></td><tr><td> Ruolo: <strong>Paziente</strong></td></tr>
+<center><table>
+<tr><td> Sei Autenticato come: <strong>${pazienteLogin.nome}</strong></td><tr><td> Ruolo: <strong>Paziente</strong></td></tr>
 <tr><td><div align="center"> <a href="/progettoSiwClinica/homePage.jsp"><button type="button" onclick='<% session.removeAttribute("pazienteLogin");%>'>LogOut</button></a> </div></td></tr>
-</table>
+</table></center>
 <%}%>
 
 
 <center> <h1>Area Paziente</h1></center>
 <br>
 <center> Scegli l'operazione vuoi effettuare:
+			<%Paziente pazienteLogin=(Paziente) session.getAttribute("pazienteLogin");
+			session.setAttribute("pazienteLogin", pazienteLogin); %>
 			<div >	<a href="/progettoSiwClinica/consultaEsami.jsp"><h1>Consulta gli Esami Sostenuti</h1></a>	</div>
 <br><br><br>
-<a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+<a href="/progettoSiwClinica/homePage.jsp">	<button class="btn btn-warning" type="button">Torna alla HomePage</button></a>
 </center>
 </body>
 

@@ -16,8 +16,8 @@ public class Paziente {
 	private String cognome;
 	private Date dataNascita;
 	
-	// problema del doppio riferimento.
-	@OneToMany(mappedBy="paziente", fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
+	
+	@OneToMany(mappedBy="paziente", fetch = FetchType.EAGER, cascade={CascadeType.PERSIST})
 	private List<Esame> esamiPrenotati;
 	//con fetch lazy mi da errore 
 

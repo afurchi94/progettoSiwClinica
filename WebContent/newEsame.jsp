@@ -25,7 +25,7 @@
 						<p>${tipologiaError}</p>
 						<label>Tipologia Esame</label>
 						
-						<select name="tipologia" >
+						<select class="form-control" name="tipologia" >
 							<% 
 							List<TipologiaEsame> tipologie= new Facade().getTipologieEsame();//me la devo far passare dalla request o session dalla named query
 							for(TipologiaEsame t: tipologie){ 

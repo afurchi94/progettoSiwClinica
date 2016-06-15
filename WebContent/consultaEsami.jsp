@@ -19,21 +19,23 @@
 	<center><h1>Esami del paziente ${pazienteLogin.cognome} ${pazienteLogin.nome} :</h1>
 	
 			clicca sul codice di un esame per vederne i dettagli</center>
-			
+			<form action="controllerVisualizzaEsami" method="get">
 			<%Paziente pazienteLogin= (Paziente)session.getAttribute("pazienteLogin");
+			if(pazienteLogin != null){
 			List<Esame> lista=pazienteLogin.getEsamiPrenotati(); 
-			if(lista.size() > 0) {%>
+			if(lista.size() > 0 ) {%>
 				<ul >
 				<%for(Esame e: lista){
 				request.setAttribute("e", e);%>
-					<form action="controllerVisualizzaEsami" method="get">
+				
 				<li>
 				<button type="submit" class="btn btn-success" name="idEsame" value='${e.id}'>${e.id}</button>  <strong>Svolto in data:</strong> ${e.dataEffettuazione} - <strong>Tipologia:</strong> ${e.tipologia.nome} - <strong>Effettuato:</strong> ${e.effettuato} 
 				</li>				
-				</form>				
+							
 				<% }%>
 				</ul>
-			<% }else{%>
+				</form>	
+			<% }}else{%>
 				
 				<h4>Non hai Effettuato ancora nessun Esame</h4>
 

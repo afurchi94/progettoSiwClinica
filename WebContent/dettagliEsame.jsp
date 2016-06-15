@@ -20,7 +20,7 @@
 			<ul >
 				<li><strong>Tipologia:</strong> ${esame.tipologia.nome}</li>
 				<li><strong>Paziente:</strong>  ${esame.paziente.cognome} ${esame.paziente.nome}</li>
-				<li><strong>Codice Fiscale:</strong> ${paziente.codiceFiscale}</li>
+				<li><strong>Codice Fiscale:</strong> ${esame.paziente.codiceFiscale}</li>
 				<li><strong>Data Esame:</strong> ${esame.dataEffettuazione}</li>
 				<li><strong>Data Prenotazione:</strong> ${esame.dataPrenotazione} alle: ${esame.oraPrenotazione}</li>
 				<li><strong>Medico:</strong> ${esame.medico.cognome} ${esame.medico.nome}</li>

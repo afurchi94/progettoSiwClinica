@@ -13,15 +13,16 @@
 </head>
 <body>
 <% session.getAttribute("paziente"); %>
-<h1>Hai Inserito un nuovo Paziente con questi dati:</h1>
-	<p>Nome: ${paziente.nome}</p>
-	<p>Cognome: ${paziente.cognome}</p>
-	<p>Cod. Fiscale: ${paziente.codiceFiscale}</p>
+<center><h1>Hai Inserito un nuovo Paziente con questi dati:</h1>
+	<p><strong>Nome:</strong> ${paziente.nome}</p>
+	<p><strong>Cognome:</strong> ${paziente.cognome}</p>
+	<p><strong>Cod. Fiscale:</strong> ${paziente.codiceFiscale}</p>
 	<strong>
 	<p>Password per accedere all'area Paziente: ${paziente.password}</p>
 	</strong>
 	<p>Data di Nascita: ${paziente.dataNascita}</p>
 	<br><BR>
-	<a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+	<a href="/progettoSiwClinica/homePage.jsp">	<button class="btn btn-priority" type="button">Torna alla HomePage</button></a>
+</center>
 </body>
 </html>

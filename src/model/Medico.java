@@ -14,7 +14,7 @@ public class Medico {
 	private String cognome;
 	private String specializzazione;
 	//con fetch Lazy mi da errore
-	@OneToMany(mappedBy="medico", fetch= FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@OneToMany(mappedBy="medico", fetch= FetchType.EAGER, cascade= {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<Esame> esami;
              
 	public Medico() {

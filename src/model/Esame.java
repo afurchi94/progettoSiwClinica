@@ -17,16 +17,16 @@ public class Esame {
 	private Time oraPrenotazione;
 	@Temporal(TemporalType.DATE)
 	private Date dataEffettuazione;
-	@OneToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@OneToOne( fetch = FetchType.EAGER)
 	private TipologiaEsame tipologia;
-	@ManyToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@ManyToOne( fetch = FetchType.EAGER,  cascade={CascadeType.MERGE, CascadeType.PERSIST})
 	@JoinColumn(name="paziente_fk")
 	private Paziente paziente;
 	// ho dovuto mettere per forza eager perche con LAZY mi dava problemi
-	@OneToMany( fetch = FetchType.EAGER, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@OneToMany( fetch = FetchType.EAGER, cascade={CascadeType.REMOVE, CascadeType.MERGE, CascadeType.PERSIST})
 	@JoinColumn(name = "esame_fk")
 	private List<Risultato> risultati;
-	@ManyToOne( fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@ManyToOne( fetch = FetchType.EAGER, cascade={CascadeType.MERGE, CascadeType.PERSIST})
 	private Medico medico;
 
 	

@@ -12,7 +12,8 @@ public class Action {
 
 	public void execute(HttpServletRequest req) {
 		facade = new Facade();
-		Esame e= (Esame) req.getAttribute("esame");
+		Esame e= new Esame();
+		e= (Esame) req.getAttribute("esame");
 		List<String> lista= (List<String>) req.getAttribute("risultati");
 		int i=0;
 		for(String r: lista){

@@ -48,7 +48,7 @@
 			<div>	<a href="/progettoSiwClinica/registerPaziente.jsp"><h1>Registra Nuovo Paziente</h1></a>	</div>
 
 <br><br>
-<a href="/progettoSiwClinica/homePage.jsp">	<button type="button">Torna alla HomePage</button></a>
+<a href="/progettoSiwClinica/homePage.jsp">	<button class="btn btn-warning" type="button">Torna alla HomePage</button></a>
 </center>
 </body>
 

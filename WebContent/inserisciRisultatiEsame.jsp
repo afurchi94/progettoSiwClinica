@@ -38,6 +38,7 @@
 			
 			<p>${risultatoError}</p>
 	<%Esame esame= (Esame)request.getAttribute("esame");
+	request.setAttribute("esame", esame);
 	List<String> lista=null;
 	
 	if(esame!=null){
@@ -49,7 +50,7 @@
 		
 		<div class="form-group">
 			<li>${r.nome} : 
-			<input type="text" class="form-control"	placeholder="Valore Risultato" name='<%= "risultato".concat(String.valueOf(i)) %>' value='<%=request.getAttribute("risultato".concat(String.valueOf(i)))%>'>
+			<input type="text" class="form-control"	placeholder="Valore Risultato" name='<%= "risultato".concat(String.valueOf(i)) %>' value='<%if(request.getAttribute("risultato".concat(String.valueOf(i))) != null) out.print(request.getAttribute("risultato".concat(String.valueOf(i)))); %>'>
 		</div>
 		
 		
