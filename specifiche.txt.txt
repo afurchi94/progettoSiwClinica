@@ -1,0 +1,56 @@
+CASO D'USO UC1: CONSULTA OFFERTA
+1)l'utente vuole consultare l'elenco delle tipologie d'esame disponibili nella clinica:
+2)l'utente sceglie l'attività "Esami Offerti dalla Clinica".
+3)il sistema mostra le tipologie di esame offerte dalla clinica
+4)L’Utente inserisce il codice per una tipologia di esame a cui è interessato. Il sistema mostra ulteriori informazioni sulla tipologia d’esame scelto (nome,descrizione e costo) nonché l’elenco dei prerequisiti e risultati.
+L'utente ripete il passo 4, finchè non indica che ha terminato
+
+ CASO D'USO UC2: CREA ESAME
+1) l'amministratore vuole creare un esame per un paziente
+2) L’Amministratore inserisce il suo codice identificativo e la sua password. Il sistema verifica la correttezza dei dati ed autentica l’Amministratore.
+3) l'amministratore sceglie l'attività "Crea Esame". il sistema mostra l'elenco delle tipologie di esami disponibili della clinica
+4) L'amministratore richiede i dati del paziente (cod fisc.) e li inserisce nella prenotazione insieme alla data e ora, e ai dati del medico specializzato nella tipologia di esame scelta.
+5) L'amministratore conferma la prenotazione dell'esame, ed il sistema registra la prenotazione, registrando anche la data e l'ora di inserimento.
+ESTENSIONI:
+4.a) L'amministratore annulla l'operazione di creazione. Il sistema non registra nessun nuovo esame.
+
+CASO D'USO UC3: CONSULTA RISULTATI PROPRIO ESAME
+1) Il paziente vuole consultare l'elenco dei propri esami.
+2) Il paziente inserisce il suo codice fiscale e la sua password. Il sistema verifica la correttezza dei dati ed autentica il paziente.Il sistema mostra le informazioni del paziente
+3)  Il paziente sceglie l'attività consulta risultati esame. Il sistema mostra l'elenco degli esami sostenuti dal paziente.
+4) Il paziente il codice di un esame. Il sistema mostra i dettagli relativi all'esame scelto
+Il paziente ripete il passo 4 finchè non indica che ha terminato
+
+CASO D'USO UC4: INSERIMENTO TIPOLOGIA DI ESAME
+1) l'amministratore vuole creare una nuova tipologia di esame per la clinica
+2) L’Amministratore inserisce il suo codice identificativo e la sua password. Il sistema verifica la correttezza dei dati ed autentica l’Amministratore.
+3) l'amministratore sceglie l'attività Inserisci nuova Tipologia Esame.
+4) L'amministratore inserisce i dati della nuova tipologia di esame. Il sistema registra la nuova tipologia di esame
+
+CASO D'USO UC5: ESAMI EFFETTUATI DA UN MEDICO
+1) L'amministratore vuole visualizzare gli esami effettuati da un medico
+2) L’Amministratore inserisce il suo codice identificativo e la sua password. Il sistema verifica la correttezza dei dati ed autentica l’Amministratore.
+3) l'amministratore sceglie l'attività Visualizza Esami dei Medici.
+4) Il sistema mostra l'elenco dei medici della clinica. L'amministrazione inserisce il codice del medico interessato. Il sistema mostra l'elenco degli esami effettuati dal medico selezionato
+L'amministratore ripete il passo 4 finchè non indica che ha terminato
+
+CASO D'USO UC6: INSERIMENTO RISULTATI ESAME
+1) L'amministratore vuole inserire i risultati di un esame
+2) L’Amministratore inserisce il suo codice identificativo e la sua password. Il sistema verifica la correttezza dei dati ed autentica l’Amministratore.
+3) l'amministratore sceglie l'attività Inserisci Risultati di un Esame.
+4) L'amministratore inserisce il codice dell'esame interessato. Il sistema mostra le informazioni sull'esame
+5) L'amministratore inserisce tutti gli eventuali risultati dell'esame. 
+6) L'amministratore conferma l'inserimento dei risultati. Il sistema registra le informazioni inserite
+
+CASO D'USO UC7: REGISTRAZIONE PAZIENTE
+1) l'amministratore vuole registrare un nuovo paziente nel sistema
+2) L’Amministratore inserisce il suo codice identificativo e la sua password. Il sistema verifica la correttezza dei dati ed autentica l’Amministratore.
+3) l'amministratore sceglie l'attività Registra Nuovo Paziente.
+4) L'amministratore richiede i dati del paziente (nome, cognome, cod fisc) e li inserisce nel sistema. Il sistema genera una password e registra il paziente.
+5) Il sistema genera una ricevuta della registrazione che verrà consegnata al paziente, contenente tutti i suoi dati, compresa la password per accedere al sistema come paziente.
+
+
+
+
+
+
