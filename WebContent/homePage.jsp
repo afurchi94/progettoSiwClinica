@@ -22,12 +22,10 @@
 				<a href="/progettoSiwClinica/areaAmministrazione.jsp" ><button type="button" class="btn btn-primary btn-lg">Area Amministrazione</button></a>
 	
 		</div>
-	<hr>
+	<hr><hr>
 		<div>
 		
-		<h1>Immagini a caso</h1>
-			<h1>News</h1>
-				<h1>roba simile</h1>
+	
 		
 		</div>
 
